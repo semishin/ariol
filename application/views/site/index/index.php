@@ -1,0 +1,1 @@
+<?php echo View::factory('site/form/loan')->render(); ?>
