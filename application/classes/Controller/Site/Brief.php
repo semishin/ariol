@@ -5,7 +5,6 @@ class Controller_Site_Brief extends Controller_Site
     public function action_add()
     {
         $this->set_metatags_and_content('', 'page');
-        $this->template->set_layout('site/global_inner');
         if ($this->request->is_ajax()) {
             $email = $this->request->post('email');
             $name = $this->request->post('name');
@@ -19,15 +18,23 @@ class Controller_Site_Brief extends Controller_Site
             $brief->text = $text;
             $brief->save();
 
- /* ?> $admin_message = View::factory('site/review/message', array(
-                'prod' => ORM::factory('Product')->fetchProdById($prod_id),
-                'name' => $name,
-                'email' => $email,
-                'content' => $content
-            ))->render();
- */
+            Email::send('d.semishin@ariol.by', array('info@ironprod.by', 'Ironprod'),
+                'Новая заявка в контактах',
+                'Имя - '.$name.'<br/>'.
+                'Email - '.$email.'<br/>'.
+                'Телефон - '.$phone.'<br/>'.
+                'Текст письма - '. $text.'<br/>',
+                /*html*/true
+            );
 
-     //       Email::send('tripshopby@gmail.com','info@trip-shop.by', 'Новый отзыв', $admin_message, true);
+            Email::send('info@ironprod.by', array('info@ironprod.by', 'Ironprod'),
+                'Новая заявка в контактах',
+                'Имя - '.$name.'<br/>'.
+                'Email - '.$email.'<br/>'.
+                'Телефон - '.$phone.'<br/>'.
+                'Текст письма - '. $text.'<br/>',
+                /*html*/true
+            );
 
             exit(json_encode(array()));
         }

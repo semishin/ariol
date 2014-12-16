@@ -1,48 +1,29 @@
-<div class="block_w no_bord no_p_b">
+<div class="content">
+    <div class="container_16">
+        <article>
+            <div class="grid_16">
+                <div class="page_material">
+                    <div class="separator_"></div>
 
-    <div class="block">
-
-        <div class="brcs">
-            <b>Вы здесь:</b>
-            <a href="/">Главная</a>
-            <i>&bull;</i>
-            <a href="/news/<?php echo $category->url; ?>"><?php echo $category->name; ?></a>
-            <i>&bull;</i>
-            <span><?php echo $name ?></span>
-        </div>
-    </div>
-
-</div>
-
-<div class="block_w no_bord zi_9">
-
-    <div class="block">
-
-        <div class="left_block">
-            <div class="call_w">
-                <strong>Ваш консультант</strong>
-                <div class="cons_name">
-                    <div class="img_wrap">
-                        <img src="/lumena/i/consultant_avatar.jpg" alt="Карина Михайлова"/>
+                    <div class="grid_4">
+                        <h2 class="orange_"><?php echo $name ?></h2>
                     </div>
-                    <span>Карина<br/>Михайлова</span>
+
+                    <div class="grid_12">
+
+                        <div class="page_material-right_block">
+
+                            <?php echo $content ?>
+
+                        </div> <!--end.page_material-right_block-->
+                    </div>
+                    <div class="clear"></div>
+                    <div class="separator_ "></div>
+
+
+
                 </div>
-                <span class="cons_cont"><b>Тел.:</b>+ 375 (17) 292 34 11</span>
-                <span class="cons_cont"><b>E-mail:</b><a href="mailto:lumena.ad@gmail.com"><span>lumena.ad@gmail.com</span></a></span>
-                <a class="skype_call" href="#"><i><!--skype_ico--></i><span>Начать разговор<b></b></span></a>
             </div>
-        </div>
-
-        <div class="right_block">
-
-            <div class="block_content">
-
-                <h2 class="page_title"><span><?php echo $name ?></span></h2>
-
-                <?php echo $content ?>
-
-            </div>
-
-        </div>
+        </article>
     </div>
 </div>

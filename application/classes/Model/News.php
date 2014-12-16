@@ -16,17 +16,14 @@ class Model_News extends ORM
         return array(
 			'id' => 'Идентификатор',
 			'name' => 'Наименование',
-            'main_image' => 'Главное изображение',
+            'content' => 'Контент',
+            'category_id' => 'Категория',
+            'active' => 'Активность',
+            'url' => 'URL',
+            'date' => 'Дата публикации',
 			's_title' => 'SEO title',
 			's_description' => 'SEO description',
-			's_keywords' => 'SEO keywords',
-			'content' => 'Контент',
-			'short_content' => 'Сокращенный контент',
-			'category' => 'Категория',
-			'category_id' => 'Категория',
-			'active' => 'Активность',
-			'url' => 'URL',
-			'created_at' => 'Дата публикации'
+			's_keywords' => 'SEO keywords'
         );
     }
 	
@@ -41,20 +38,19 @@ class Model_News extends ORM
 
 		parent::save($validation);
 
-		if (!$this->created_at) {
-			$this->created_at = date('Y-m-d');
+		if (!$this->date) {
+			$this->date = date('Y-m-d');
 			$this->save($validation);
 		}
 	}
 	
 	protected $_grid_columns = array(
-		//'id' => null,
 		'name' => null,
 		'category_id' => array(
 			'type' => 'template',
 			'template' => '${category_name}'
 		),
-		'created_at' => null,
+		'date' => null,
 		'edit' => array(
 			'width' => '40',
 			'type' => 'link',
@@ -83,7 +79,8 @@ class Model_News extends ORM
     {
         return array(
             'name',
-            'category_id'
+            'category_id',
+            'date'
         );
     }
 }

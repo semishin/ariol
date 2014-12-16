@@ -13,6 +13,105 @@ Route::set('site-index', '')
 		'name' => 'Главная'
 	));
 
+Route::set('site-ourproduct', 'ourproduct')
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'ourproduct',
+        'action'     => 'index',
+    ));
+
+Route::set('site-comment', 'comment')
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'comment',
+        'action'     => 'index',
+    ));
+
+Route::set('site-comments', 'comments/add')
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'comment',
+        'action'     => 'add',
+    ));
+
+Route::set('site-brief', 'brief/add')
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'brief',
+        'action'     => 'add',
+    ));
+
+Route::set('site-kontaktyi', 'kontaktyi')
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'page',
+        'action'     => 'kontaktyi',
+    ));
+
+Route::set('site-vakansii', 'vakansii')
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'page',
+        'action'     => 'vakansii',
+    ));
+
+Route::set('site-o-kompanii', 'o-kompanii')
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'page',
+        'action'     => 'okompanii',
+    ));
+
+Route::set('site-service-item', 'service/<category>/<url>')
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'service',
+        'action'     => 'item',
+    ));
+
+Route::set('site-service', 'service/<url>(/<page>)')
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'service',
+        'action'     => 'category',
+    ));
+
+Route::set('site-news-item', 'news/<url>')
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'news',
+        'action'     => 'item',
+    ));
+
+Route::set('site-news', 'news/<url>(/<page>)')
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'news',
+        'action'     => 'category',
+    ));
+
+Route::set('site-articles', 'articles(/<page>)', array ('page' => '\d+'))
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'article',
+        'action'     => 'index',
+    ));
+
+Route::set('site-article', 'article/<url>')
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'article',
+        'action'     => 'item',
+    ));
+
+
+Route::set('site-page', '<url>', array('url' => '.*'))
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'page',
+        'action'     => 'index',
+    ));
+/*
 Route::set('site-search', 'search(/<page>)', array('page' => '\d+'))
 
     ->defaults(array(
@@ -111,3 +210,4 @@ Route::set('site-page', '<url>', array('url' => '.*'))
 		'controller' => 'page',
 		'action'     => 'index',
 	));
+*/

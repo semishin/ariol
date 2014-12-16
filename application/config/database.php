@@ -6,7 +6,7 @@ return array(
 		'connection' => array(
 			'username'   => 'root',
 			'password'   => '',
-			'database'   => 'ironprod',
+			'database'   => 'ariol',
 			'hostname'   => 'localhost',
 		),
 		'table_prefix' => '',

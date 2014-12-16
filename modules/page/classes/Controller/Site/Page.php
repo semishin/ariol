@@ -10,6 +10,5 @@ class Controller_Site_Page extends Controller_Site
         $url = $this->param('url');
 
         $this->set_metatags_and_content($url);
-        $this->template->set_layout('layout/site/global_inner');
     }
 }

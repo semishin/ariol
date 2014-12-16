@@ -6,77 +6,47 @@
 
 $adminPrefix = Kohana::$config->load('extasy')->admin_path_prefix;
 
-Route::set('admin-event_section', $adminPrefix . 'event_section(/<action>(/<id>))')
+Route::set('admin-slide', $adminPrefix . 'slide(/<action>(/<id>))')
     ->defaults(array(
         'directory' => 'admin',
-        'controller' => 'event_section',
-        'action' => 'index'
-    ));
-
-Route::set('admin-event', $adminPrefix . 'event(/<action>(/<id>))')
-    ->defaults(array(
-        'directory' => 'admin',
-        'controller' => 'event',
-        'action' => 'index'
-    ));
-
-Route::set('admin-slides', $adminPrefix . 'slides(/<action>(/<id>))')
-    ->defaults(array(
-        'directory' => 'admin',
-        'controller' => 'slides',
+        'controller' => 'slide',
         'action' => 'index'
     ));
 
 Route::set('admin-news_category', $adminPrefix . 'news_category(/<action>(/<id>))')
-	->defaults(array(
-		'directory' => 'admin',
-		'controller' => 'news_category',
-		'action' => 'index'
-	));
+    ->defaults(array(
+        'directory' => 'admin',
+        'controller' => 'news_category',
+        'action' => 'index'
+    ));
 
 Route::set('admin-news', $adminPrefix . 'news(/<action>(/<id>))')
-	->defaults(array(
-		'directory' => 'admin',
-		'controller' => 'news',
-		'action' => 'index'
-	));
-
-Route::set('admin-library_category', $adminPrefix . 'library_category(/<action>(/<id>))')
     ->defaults(array(
         'directory' => 'admin',
-        'controller' => 'library_category',
+        'controller' => 'news',
         'action' => 'index'
     ));
 
-Route::set('admin-library', $adminPrefix . 'library(/<action>(/<id>))')
+Route::set('admin-comment', $adminPrefix . 'comment(/<action>(/<id>))')
     ->defaults(array(
         'directory' => 'admin',
-        'controller' => 'library',
+        'controller' => 'comment',
         'action' => 'index'
     ));
 
-Route::set('admin-product_category', $adminPrefix . 'product_category(/<action>(/<id>))')
+Route::set('admin-article', $adminPrefix . 'article(/<action>(/<id>))')
     ->defaults(array(
         'directory' => 'admin',
-        'controller' => 'product_category',
+        'controller' => 'article',
         'action' => 'index'
     ));
 
-Route::set('admin-product', $adminPrefix . 'product(/<action>(/<id>))')
+Route::set('admin-ourproduct', $adminPrefix . 'ourproduct(/<action>(/<id>))')
     ->defaults(array(
         'directory' => 'admin',
-        'controller' => 'product',
+        'controller' => 'ourproduct',
         'action' => 'index'
     ));
-
-
-
-Route::set('admin-service', $adminPrefix . 'service(/<action>(/<id>))')
-	->defaults(array(
-		'directory' => 'admin',
-		'controller' => 'service',
-		'action' => 'index'
-	));
 
 Route::set('admin-brief', $adminPrefix . 'brief(/<action>(/<id>))')
     ->defaults(array(
@@ -85,47 +55,23 @@ Route::set('admin-brief', $adminPrefix . 'brief(/<action>(/<id>))')
         'action' => 'index'
     ));
 
-Route::set('admin-main', $adminPrefix . 'main(/<action>(/<id>))')
+Route::set('admin-ourproduct_category', $adminPrefix . 'ourproduct_category(/<action>(/<id>))')
     ->defaults(array(
         'directory' => 'admin',
-        'controller' => 'main',
+        'controller' => 'ourproduct_category',
         'action' => 'index'
     ));
 
-Route::set('admin-clients', $adminPrefix . 'clients(/<action>(/<id>))')
+Route::set('admin-service', $adminPrefix . 'service(/<action>(/<id>))')
     ->defaults(array(
         'directory' => 'admin',
-        'controller' => 'clients',
+        'controller' => 'service',
         'action' => 'index'
     ));
 
-Route::set('admin-managers', $adminPrefix . 'managers(/<action>(/<id>))')
+Route::set('admin-service_category', $adminPrefix . 'service_category(/<action>(/<id>))')
     ->defaults(array(
         'directory' => 'admin',
-        'controller' => 'managers',
+        'controller' => 'service_category',
         'action' => 'index'
     ));
-
-Route::set('admin-discounts', $adminPrefix . 'discounts(/<action>(/<id>))')
-    ->defaults(array(
-        'directory' => 'admin',
-        'controller' => 'discounts',
-        'action' => 'index'
-    ));
-
-
-
-Route::set('admin-service_section', $adminPrefix . 'service_section(/<action>(/<id>))')
-    ->defaults(array(
-        'directory' => 'admin',
-        'controller' => 'service_section',
-        'action' => 'index'
-    ));
-	
-	
-Route::set('admin-callback', $adminPrefix.'callback(/<action>(/<id>))')
-        ->defaults(array(
-		'directory' => 'admin',
-		'controller' => 'callback',
-		'action' => 'index'
-	));

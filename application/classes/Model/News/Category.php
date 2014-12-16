@@ -15,7 +15,12 @@ class Model_News_Category extends ORM
         return array(
 			'id' => 'Идентификатор',
 			'name' => 'Наименование',
+            'active' => 'Активность',
             'url' => 'URL',
+            'position' => 'Позиция',
+            's_title' => 'SEO title',
+            's_description' => 'SEO description',
+            's_keywords' => 'SEO keywords'
         );
     }
 	
@@ -35,6 +40,8 @@ class Model_News_Category extends ORM
 	protected $_grid_columns = array(
 		'name' => null,
         'id' => null,
+        'position' => null,
+        'active' => null,
 		'edit' => array(
 			'width' => '40',
 			'type' => 'link',
@@ -58,7 +65,9 @@ class Model_News_Category extends ORM
     {
         return array(
             'name',
-            'id'
+            'id',
+            'position',
+            'active'
         );
     }
 }

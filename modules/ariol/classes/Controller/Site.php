@@ -12,6 +12,12 @@ class Controller_Site extends Controller
 		parent::before();
 		
 		$this->template->set_layout('layout/site/global');
+
+
+        $service_category = ORM::factory('Service_Category')->where('active','=',1)->order_by('position','asc')->find_all();
+        $service = ORM::factory('Service')->where('active','=',1)->order_by('position','asc')->find_all();
+        $this->template->service_category = $service_category;
+        $this->template->service = $service;
 		
 		$this->template->last_news_item = ORM::factory('News')->where('category_id', '=', 1)
 											->where('active', '=', 1)
@@ -35,7 +41,7 @@ class Controller_Site extends Controller
             ->get_page_by_url($url);
 
         if(!$model->loaded() || (isset($model->md5_url) && $model->md5_url != md5($url))) {
-            $this->forward_404();
+           // $this->forward_404();
         }
 
 		$this->_items_on_page = $items_on_page;
