@@ -35,55 +35,19 @@
 
     <div class="after_slider">
         <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <a href="#"><img src="/ariolby/img/pholife.png" alt="pholife" class="img-responsive"></a>
-                <p class="text-center"><a  href="#" class="text_link">Pholife</a></p>
-                <p class="text-center">Иллюстрация</p>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-                <a href="#"><img src="/ariolby/img/max_target.png" alt="max_target" class="img-responsive"></a>
-                <p class="text-center"><a  href="#" class="text_link">Max Target</a></p>
-                <p class="text-center">Web-design, оптимизация</p>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-                <a href="#"><img src="/ariolby/img/artstick.png" alt="artstick" class="img-responsive"></a>
-                <p class="text-center"><a  href="#" class="text_link">ArtStick</a></p>
-                <p class="text-center">Дизайн, вёрстка, продвижение</p>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-                <a href="#"><img src="/ariolby/img/sibillina.png" alt="sibillina" class="img-responsive"></a>
-                <p class="text-center"><a  href="#" class="text_link">Издательство Сибиллина</a></p>
-                <p class="text-center">Создание сайта, поддержка</p>
-            </div>
-            <!-- </div>
-
-             <div class="row">-->
-            <div class="col-md-3 col-sm-6">
-                <a href="#"><img src="/ariolby/img/best_day_logo.png" alt="best_day_logo" class="img-responsive"></a>
-                <p class="text-center"><a  href="#" class="text_link">The Best Day</a></p>
-                <p class="text-center">Логотип сайта</p>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-                <a href="#"><img src="/ariolby/img/vprint.png" alt="vprint" class="img-responsive"></a>
-                <p class="text-center"><a  href="#" class="text_link">VPrint</a></p>
-                <p class="text-center">Дизайн сайта, СЕО</p>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-                <a href="#"><img src="/ariolby/img/best_day.png" alt="best_day" class="img-responsive"></a>
-                <p class="text-center"><a  href="#" class="text_link">The Best Day</a></p>
-                <p class="text-center">Веб-сайт, продвижение</p>
-            </div>
-
-            <div class="col-md-3 col-sm-6">
-                <a href="#"><img src="/ariolby/img/super_pol.png" alt="super_pol" class="img-responsive"></a>
-                <p class="text-center"><a href="#" class="text_link">Напольные покрытия</a></p>
-                <p class="text-center">Разработка сайта</p>
-            </div>
+            <?php foreach ($ourproduct as $item) { ?>
+                <div class="col-md-3 col-sm-6">
+                    <a href="<?php echo $item->url ?>"><img src="<?php echo Lib_Image::crop($item->image, 'ourproduct',$item->id, 315, 227); ?>" alt="<?php echo $item->name ?>" class="img-responsive"></a>
+                    <p class="text-center"><a  href="<?php echo $item->url ?>" class="text_link"><?php echo $item->name ?></a></p>
+                    <p class="text-center">
+                        <?php $names = array(); ?>
+                        <?php foreach ($item->categories->find_all() as $cat) { ?>
+                            <?php $names[] = mb_ucfirst(mb_strtolower($cat->name)); ?>
+                        <?php } ?>
+                        <?php echo join(', ', $names); ?>
+                    </p>
+                </div>
+            <?php } ?>
         </div>
 
     </div>

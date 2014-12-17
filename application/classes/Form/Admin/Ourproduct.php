@@ -10,9 +10,15 @@ class Form_Admin_Ourproduct extends CM_Form_Abstract
     {
         $this->add_plugin(new CM_Form_Plugin_ORM());
 
+        $categories = ORM::factory('Ourproduct_Category')->order_by('name', 'ASC')->find_all();
+
+        $category_list = array();
+        foreach ($categories as $item) {
+            $category_list[$item->id] = $item->name;
+        }
+
         $this->set_field('name', new CM_Field_String(), 0);
-        $this->set_field('category_id', new CM_Field_Select_ORM(ORM::factory('Ourproduct_Category')), 2);
-//        $this->set_field('category_id', new CM_Field_Manytomany_ORM(ORM::factory('Ourproduct_Category'),$this->get_model()), 2);
+        $this->set_field('categories', new CM_Field_Manytomany($category_list, $this->get_model()), 2);
         $this->set_field('position', new CM_Field_Int(), 4);
         $this->set_field('url', new CM_Field_String(), 6);
         $this->set_field('link', new CM_Field_String(), 8);
@@ -29,7 +35,7 @@ class Form_Admin_Ourproduct extends CM_Form_Abstract
 
 
         $fieldgroups = array(
-            'Основные данные' => array('name', 'category_id', 'position', 'url', 'link', 'active', 'on_main', 'image', 'more_image', 'short_content', 'content'),
+            'Основные данные' => array('name', 'categories', 'position', 'url', 'link', 'active', 'on_main', 'image', 'more_image', 'short_content', 'content'),
             'Мета данные' => array('s_title', 's_description', 's_keywords'),
         );
 

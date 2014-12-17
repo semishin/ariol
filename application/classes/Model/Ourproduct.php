@@ -5,9 +5,24 @@ class Model_Ourproduct extends ORM
     protected $_table_name = 'ourproducts';
 
     protected $_belongs_to = array(
-        'category' => array(
-            'model'       => 'Ourproduct_Category',
-            'foreign_key' => 'category_id',
+
+    );
+
+    protected $_has_many_to_save = array(
+        'categories'    => array(
+            'model'=> 'Ourproduct_Category',
+            'foreign_key' => 'prod_id',
+            'through'      => 'prod_cat',
+            'far_key'      => 'cat_id',
+        )
+    );
+
+    protected $_has_many = array(
+        'categories'    => array(
+            'model'=> 'Ourproduct_Category',
+            'foreign_key' => 'prod_id',
+            'through'      => 'prod_cat',
+            'far_key'      => 'cat_id',
         )
     );
 
@@ -16,7 +31,7 @@ class Model_Ourproduct extends ORM
         return array(
             'id' => 'Идентификатор',
             'name' => 'Наименование',
-            'category_id' => 'Категория',
+            'categories' => 'Категория',
             'position' => 'Позиция',
             'url' => 'Ссылка на описание работы',
             'link' => 'Ссылка на сайт',
@@ -44,10 +59,6 @@ class Model_Ourproduct extends ORM
 
     protected $_grid_columns = array(
         'name' => null,
-        'category_id' => array(
-            'type' => 'template',
-            'template' => '${category_name}'
-        ),
         'position' => null,
         'on_main' => null,
         'active' => null,
@@ -70,16 +81,11 @@ class Model_Ourproduct extends ORM
         )
     );
 
-    public function get_category_name()
-    {
-        return $this->category->name;
-    }
 
     public function sortable_fields()
     {
         return array(
             'name',
-            'category_id',
             'on_main',
             'position',
             'active'

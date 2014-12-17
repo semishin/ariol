@@ -13,6 +13,15 @@ Route::set('admin-slide', $adminPrefix . 'slide(/<action>(/<id>))')
         'action' => 'index'
     ));
 
+Route::set('admin-article', $adminPrefix . 'article(/<action>(/<id>))')
+    ->defaults(array(
+        'directory' => 'admin',
+        'controller' => 'article',
+        'action' => 'index'
+    ));
+
+
+
 Route::set('admin-news_category', $adminPrefix . 'news_category(/<action>(/<id>))')
     ->defaults(array(
         'directory' => 'admin',
@@ -31,13 +40,6 @@ Route::set('admin-comment', $adminPrefix . 'comment(/<action>(/<id>))')
     ->defaults(array(
         'directory' => 'admin',
         'controller' => 'comment',
-        'action' => 'index'
-    ));
-
-Route::set('admin-article', $adminPrefix . 'article(/<action>(/<id>))')
-    ->defaults(array(
-        'directory' => 'admin',
-        'controller' => 'article',
         'action' => 'index'
     ));
 

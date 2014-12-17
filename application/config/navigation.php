@@ -19,6 +19,21 @@ return array(
         'parent' => 'admin.slide.index'
     ),
 
+    'admin.article.index' => array(
+        'title' => 'Список статей',
+        'route' => 'admin-article'
+    ),
+    'admin.article.edit' => array(
+        'title' => 'Редактирование статьи',
+        'route' => 'admin-article:edit',
+        'parent' => 'admin.article.index'
+    ),
+    'admin.article.create' => array(
+        'title' => 'Добавление статьи',
+        'route' => 'admin-article:create',
+        'parent' => 'admin.article.index'
+    ),
+
 
 
 
@@ -52,21 +67,6 @@ return array(
         'parent' => 'admin.brief.index'
     ),
 
-    'admin.slide.index' => array(
-        'title' => 'Список слайдов',
-        'route' => 'admin-slide'
-    ),
-    'admin.slide.edit' => array(
-        'title' => 'Редактирование слайда',
-        'route' => 'admin-slide:edit',
-        'parent' => 'admin.slide.index'
-    ),
-    'admin.slide.create' => array(
-        'title' => 'Добавление слайда',
-        'route' => 'admin-slide:create',
-        'parent' => 'admin.slide.index'
-    ),
-
     'admin.news_category.index' => array(
         'title' => 'Список категорий новостей',
         'route' => 'admin-news_category'
@@ -95,21 +95,6 @@ return array(
         'title' => 'Добавление новости',
         'route' => 'admin-news:create',
         'parent' => 'admin.news.index'
-    ),
-
-    'admin.article.index' => array(
-        'title' => 'Список статей',
-        'route' => 'admin-article'
-    ),
-    'admin.article.edit' => array(
-        'title' => 'Редактирование статьи',
-        'route' => 'admin-article:edit',
-        'parent' => 'admin.article.index'
-    ),
-    'admin.article.create' => array(
-        'title' => 'Добавление статьи',
-        'route' => 'admin-article:create',
-        'parent' => 'admin.article.index'
     ),
 
     'admin.ourproduct.index' => array(

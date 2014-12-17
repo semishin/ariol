@@ -13,6 +13,38 @@ Route::set('site-index', '')
 		'name' => 'Главная'
 	));
 
+Route::set('site-kontaktyi', 'kontaktyi')
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'page',
+        'action'     => 'kontaktyi',
+    ));
+
+Route::set('site-o-kompanii', 'o-kompanii')
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'page',
+        'action'     => 'okompanii',
+    ));
+
+Route::set('site-articles', 'articles(/<page>)', array ('page' => '\d+'))
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'article',
+        'action'     => 'index',
+    ));
+
+Route::set('site-article', 'article/<url>')
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'article',
+        'action'     => 'item',
+    ));
+
+
+
+
+
 Route::set('site-ourproduct', 'ourproduct')
     ->defaults(array(
         'directory' => 'site',
@@ -41,25 +73,11 @@ Route::set('site-brief', 'brief/add')
         'action'     => 'add',
     ));
 
-Route::set('site-kontaktyi', 'kontaktyi')
-    ->defaults(array(
-        'directory' => 'site',
-        'controller' => 'page',
-        'action'     => 'kontaktyi',
-    ));
-
 Route::set('site-vakansii', 'vakansii')
     ->defaults(array(
         'directory' => 'site',
         'controller' => 'page',
         'action'     => 'vakansii',
-    ));
-
-Route::set('site-o-kompanii', 'o-kompanii')
-    ->defaults(array(
-        'directory' => 'site',
-        'controller' => 'page',
-        'action'     => 'okompanii',
     ));
 
 Route::set('site-service-item', 'service/<category>/<url>')
@@ -88,20 +106,6 @@ Route::set('site-news', 'news/<url>(/<page>)')
         'directory' => 'site',
         'controller' => 'news',
         'action'     => 'category',
-    ));
-
-Route::set('site-articles', 'articles(/<page>)', array ('page' => '\d+'))
-    ->defaults(array(
-        'directory' => 'site',
-        'controller' => 'article',
-        'action'     => 'index',
-    ));
-
-Route::set('site-article', 'article/<url>')
-    ->defaults(array(
-        'directory' => 'site',
-        'controller' => 'article',
-        'action'     => 'item',
     ));
 
 

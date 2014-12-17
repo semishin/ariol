@@ -7,10 +7,21 @@ class Model_Ourproduct_Category extends ORM
     protected $_belongs_to = array(
     );
 
+    protected $_has_many_to_save = array(
+        'ourproduct'    => array(
+            'model'=> 'Ourproduct',
+            'foreign_key' => 'cat_id',
+            'through'      => 'prod_cat',
+            'far_key'      => 'prod_id',
+        )
+    );
+
     protected $_has_many = array(
-        'ourproducts' => array(
-            'model' => 'Ourproduct',
-            'foreign_key' => 'category_id',
+        'ourproduct'    => array(
+            'model'=> 'Ourproduct',
+            'foreign_key' => 'cat_id',
+            'through'      => 'prod_cat',
+            'far_key'      => 'prod_id',
         )
     );
 

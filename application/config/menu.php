@@ -14,7 +14,7 @@ return array
 //			'<i class="fa fa-comments"></i>|Категории' => 'admin-news_category',
 //			'<i class="fa fa-comments-o"></i>|Новости' => 'admin-news',
 //		),
-//        '<i class="fa fa-edit"></i>|Статьи' => 'admin-article',
+        '<i class="fa fa-edit"></i>|Статьи' => 'admin-article',
         '<i class="fa fa-briefcase"></i>|Наши работы' => array(
             '<i class="fa fa-briefcase"></i>|Категории работ' => 'admin-ourproduct_category',
             '<i class="fa fa-briefcase"></i>|Наши работы' => 'admin-ourproduct',

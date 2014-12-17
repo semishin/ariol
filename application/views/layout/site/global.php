@@ -43,8 +43,8 @@
 
                 <ul class="nav nav-pills navigation">
 
-                    <li><a href="#">Главная</a></li>
-                    <li><a href="#"> О студии</a></li>
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="/o-kompanii"> О студии</a></li>
 
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Услуги<i><span class="caret"></span></i>
@@ -57,8 +57,8 @@
                     </li>
 
                     <li><a href="#">Работы</a></li>
-                    <li><a href="#">Блог</a></li>
-                    <li><a href="#">Контакты</a></li>
+                    <li><a href="/articles">Блог</a></li>
+                    <li><a href="/kontaktyi">Контакты</a></li>
 
                 </ul>
 
