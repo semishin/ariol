@@ -1,97 +1,129 @@
-﻿         /* ↓main page↓ */
+﻿/* ↓main page↓ */
 
-         @font-face {
-             font-family: 'Museo Cyrl'; /* Гарнитура шрифта */
-             src: url(../fonts/museo_cyrl_500_regular.otf); /* Путь к файлу со шрифтом */
-         }
-         @font-face {
-             font-family: 'Museo Sans Cyrl 100'; /* Гарнитура шрифта */
-             src: url(../fonts/museosanscyrl_1.otf); /* Путь к файлу со шрифтом */
-         }
-         @font-face {
-             font-family: 'Museo Sans Cyrl 300'; /* Гарнитура шрифта */
-             src: url(../fonts/museosanscyrl_2.otf); /* Путь к файлу со шрифтом */
-         }
-         @font-face {
-             font-family: 'Museo Sans Cyrl 500'; /* Гарнитура шрифта */
-             src: url(../fonts/museosanscyrl.otf); /* Путь к файлу со шрифтом */
-         }
-         @font-face {
-             font-family: 'Museo Sans Cyrl 700'; /* Гарнитура шрифта */
-             src: url(../fonts/museosanscyrl_3.otf); /* Путь к файлу со шрифтом */
-         }
-         @font-face {
-             font-family: 'Museo Sans Cyrl 900'; /* Гарнитура шрифта */
-             src: url(../fonts/museosanscyrl_0.otf); /* Путь к файлу со шрифтом */
-         }
-
-
-
-body{
-    background:url('../img/background.jpg') repeat-y center center ;
+@font-face {
+    font-family: 'Museo Cyrl'; /* Гарнитура шрифта */
+    src: url(../fonts/museo_cyrl_500_regular.otf); /* Путь к файлу со шрифтом */
 }
 
-.site_page{
+@font-face {
+    font-family: 'Museo Sans Cyrl 100'; /* Гарнитура шрифта */
+    src: url(../fonts/museosanscyrl_1.otf); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl 300'; /* Гарнитура шрифта */
+    src: url(../fonts/museosanscyrl_2.otf); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl 500'; /* Гарнитура шрифта */
+    src: url(../fonts/museosanscyrl.otf); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl 700'; /* Гарнитура шрифта */
+    src: url(../fonts/museosanscyrl_3.otf); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl 900'; /* Гарнитура шрифта */
+    src: url(../fonts/museosanscyrl_0.otf); /* Путь к файлу со шрифтом */
+}
+*{
+    outline: none !important;
+}
+.btn{
+    box-shadow: none !important;
+}
+.btn-default:active, .btn-default:focus{
+    background-color: inherit;
+}
+a:focus{
+    text-decoration: none;
+}
+
+
+body {
+    /*background: url('../img/background.jpg') repeat-y center center;*/
+    background: url('../img/bg_pat.jpg') repeat-y center center;
+    margin: 6px;
+}
+
+.site_page {
     margin: 2.62%;
     background-color: white;
     border-bottom: 12px solid #aaaaaa;
     border-radius: 6px;
     box-shadow: 0px 0px 35px black;
+    width: 94.76%;
 }
 
-
-a:hover, a:active{
+a:hover, a:active {
     text-decoration: none;
 }
-
-header{
-    padding-top: 1.5%;
-    padding-left: 4.4%;
-    /*padding-right: 4.4%;*/
-    padding-bottom: 1.5%;
+.font-size14{
+    font-size: 14px !important;
 }
-header .logo{
+
+header {
+    padding: 1.5% 0;
+}
+
+header .logo {
+    margin-left: 50px;
     vertical-align: middle;
 }
-header .logo h1{
+
+header .logo h1 {
     font-family: 'Museo Cyrl';
     color: #cc0000;
     font-size: 48px;
-    float:left;
+    float: left;
 }
-header .logo>span{
+
+header .logo > span {
     display: none;
 }
-header .logo span, .header_left_block small{
+
+header .logo span, .header_left_block small {
     font-family: 'Museo Sans Cyrl 100';
     font-size: 12px;
     color: #a3a3a3;
 }
-    /*↓small_menu_options↓*/
-header .small_menu{
+
+/*↓small_menu_options↓*/
+header .small_menu {
     display: none;
 }
 
-header .small_menu .navbar-header{
-    background-color: #f0f0f0;
-    border-top: 1px solid #cacaca;
+header .small_menu .navbar-header {
+    background-color: white;
+    /*border-top: 1px solid #cacaca;*/
     border-bottom: 1px solid #cacaca;
 }
+header .small_menu .navbar-default {
+     background-color: white;
+     border-color: white;
+}
+
 header .small_menu .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
     background-color: transparent;
 }
+
 header .small_menu .navbar-default .navbar-toggle {
-   border: none;
+    border: none;
 }
-header .small_menu div.navbar-collapse{
+
+header .small_menu div.navbar-collapse {
     padding-right: 30px;
 }
-header .small_menu  b.caret{
+
+header .small_menu b.caret {
     margin-left: 1px;
     margin-top: -9px;
 }
 
-header .small_menu .dropdown-toggle i{
+header .small_menu .dropdown-toggle i {
     border: 2px solid #333333;
     border-radius: 100%;
     width: 15px;
@@ -102,32 +134,49 @@ header .small_menu .dropdown-toggle i{
     bottom: 14px;
 }
 
-header .small_menu li a{
+header .small_menu li a {
     font-family: 'Museo Sans Cyrl 900';
     font-size: 14px;
     font-weight: bold;
-    color:#333333 !important;
+    color: #333333 !important;
 }
+
 /*header .small_menu ul.nav>li>a.dropdown-toggle:active i{
     border: 2px solid  #00cc33;
 }*/
-header .small_menu ul.nav>li:hover >a{
+header .small_menu ul.nav > li:hover > a {
     color: #00cc33 !important;
 }
-    /*↑small_menu_options↑*/
 
-header .navigation{
+header span.mobile_logo{
+    padding-left: 20px;
+    font-family: 'Museo Cyrl';
+    color: #cc0000;
+    font-size: 48px;
+}
+header span.mobile_logo>i{
+    font-family: 'Museo Sans Cyrl 100';
+    font-size: 12px;
+    color: #a3a3a3;
+}
+
+/*↑small_menu_options↑*/
+
+header .navigation {
     padding-top: 40px;
     padding-left: 60px;
 }
-header .dropdown-toggle{
+
+header .dropdown-toggle {
     margin-right: 6px;
 }
-header .navigation  span.caret{
-   margin-left: 1px;
-   margin-top: -9px;
+
+header .navigation span.caret {
+    margin-left: 1px;
+    margin-top: -9px;
 }
-header .navigation i, header .small_menu .dropdown-toggle i{
+
+header .navigation i, header .small_menu .dropdown-toggle i {
     border: 2px solid #333333;
     border-radius: 100%;
     width: 15px;
@@ -137,10 +186,12 @@ header .navigation i, header .small_menu .dropdown-toggle i{
     position: absolute;
     bottom: 14px;
 }
-header .navigation a:hover i, header .small_menu .dropdown-toggle:hover i{
+
+header .navigation a:hover i, header .small_menu .dropdown-toggle:hover i {
     border: 2px solid #00cc33;
 }
-header li a{
+
+header li a {
     margin-right: -12px;
     text-transform: uppercase;
     font-family: 'Museo Sans Cyrl 900';
@@ -149,24 +200,27 @@ header li a{
     font-weight: bold;
     background-color: #ffffff !important;
 }
-header ul.dropdown-menu li a{
+
+header ul.dropdown-menu li a {
     margin-right: auto;
 }
-header li a:hover{
+
+header li a:hover {
     color: #00cc33;
 }
 
-
-.header_right_block{
-    border-left:1px solid #aaaaaa;
+.header_right_block {
+    border-left: 1px solid #aaaaaa;
     /*padding-left: 60px;*/
     /*padding-right: 60px;*/
 }
-.header_right_block strong{
+
+.header_right_block strong {
     font-family: 'Museo Sans Cyrl 500';
     font-size: 15px;
 }
-.header_right_block button.btn-default{
+
+.header_right_block button.btn-default {
     padding: 6px 12px 4px 12px;
     font-family: 'Museo Sans Cyrl 500';
     font-size: 14px;
@@ -175,77 +229,96 @@ header li a:hover{
     border-radius: 5px;
     text-transform: uppercase;
 }
-.header_right_block button.btn-default:hover{
+
+.header_right_block button.btn-default:hover {
     color: #00cc33;
     border: 1px solid #00cc33;
     background-color: white;
 }
 
-article .color_divider{
+article .color_divider {
     width: 100%;
     height: 4px;
     background: url('../img/color_divider.jpg') no-repeat center center;
-    margin-top: -11px;
+    /*margin-top: -11px;*/
+    /*margin-top: -0.799%;*/
+    margin-top: -0.85%;
 }
+
 .over_slide {
+    z-index: 1;
     position: absolute;
-    top: 50%;
-    color:white;
+    bottom: 100px;
+    color: white;
     left: 40px;
 }
-.over_slide h2{
+
+.over_slide h3 {
     font-family: 'Museo Cyrl';
     font-size: 31px;
 }
-.over_slide p{
+
+.over_slide p {
     font-family: 'Museo Sans Cyrl 300';
     font-size: 15px;
-    color:white;
+    color: white;
 }
-.over_slide_button{
-    display:block;
 
+.pagination {
+    left: 70px;
+    bottom: 49px;
+    /*width: 100%;*/
+    z-index: 10000;
+    position: absolute;
 }
-.over_slide li{
-    background: #0099cc;
+
+.swiper-pagination-switch {
+    display: inline-block;
+    width: 33px;
     height: 5px;
-    width: 8%;
-    margin-left: 5px;
- }
-.over_slide li:hover{
-    background: #33cc33;
+    background: #0099cc;
+    margin-right: 9px;
     cursor: pointer;
 }
 
+.swiper-active-switch {
+    background: #33cc33;
+}
 
-article .middle_text h1{
+article .middle_text h1 {
     font-family: 'Museo Cyrl';
     font-size: 31px;
 }
-article .middle_text p{
+
+article .middle_text p {
     font-family: 'Museo Sans Cyrl 500';
     font-size: 16px;
     padding-bottom: 4%;
 }
-.after_slider p{
+
+.block_works p {
     font-family: 'Museo Sans Cyrl 700';
     font-size: 14px;
 }
-article .after_slider img{
+
+article .block_works img {
     margin-top: 15px;
-    width:100%;
+    width: 100%;
 }
-.text_link{
+
+.text_link {
     font-family: 'Museo Sans Cyrl 700';
-    font-size:20px;
-    color:#24a0cf;
+    font-size: 20px;
+    color: #24a0cf;
     border-bottom: 1px solid #24a0cf;
 }
-.text_link:hover{
+
+.text_link:hover {
     color: #00cc33;
     border-bottom: 1px solid #00cc33;
 }
-article button.btn-default{
+
+article button.btn-default {
     padding: 6px 12px 4px 12px;
     font-family: 'Museo Sans Cyrl 500';
     font-size: 14px;
@@ -256,14 +329,12 @@ article button.btn-default{
     margin-bottom: 5.5%;
     margin-top: 5.5%;
 }
-article button.btn-default:hover{
+
+article button.btn-default:hover {
     color: #00cc33;
     border: 1px dashed #00cc33;
     background-color: white;
 }
-
-
-
 
 footer {
     background-color: #f0f0f0;
@@ -277,207 +348,488 @@ footer {
     border-bottom-left-radius: 6px;
     margin-bottom: -6px;
 }
-footer .top_part .col-md-4 p, footer .bot_part .col-md-4 p, footer .top_part .col-md-3{
+
+footer .top_part .col-md-4 p, footer .bot_part .col-md-4 p, footer .top_part .col-md-3 {
     font-family: 'Museo Sans Cyrl 500';
     font-size: 14px;
 }
-footer hr{
+
+footer hr {
     color: #cacaca;
-    border-bottom: 1px solid #cacaca ;
+    border-bottom: 1px solid #cacaca;
     margin-bottom: 5.5%;
     margin-top: 5.5%;
 }
-footer .bot_part .col-md-4 p span{
+
+footer .bot_part .col-md-4 p span {
     font-family: 'Museo Cyrl';
     font-size: 31px;
     color: black;
 }
-footer .col-md-2 a, footer .col-md-4 p>a{
+
+footer .col-md-2 a, footer .col-md-4 p > a, .text_link15 {
     font-family: 'Museo Sans Cyrl 500';
     border-bottom: 1px solid #24a0cf;
-    font-size:14px;
-    color:#0099cc;
+    font-size: 15px;
+    color: #0099cc;
 }
-footer .col-md-2 a:hover, footer .col-md-4 p>a:hover{
+
+footer .col-md-2 a:hover, footer .col-md-4 p > a:hover, .text_link15:hover {
     color: #00cc33;
     border-bottom: 1px solid #00cc33;
 }
-footer .top_part .soc_imgs{
+
+footer .top_part .soc_imgs {
     float: right;
 }
-footer .top_part .soc_imgs img{
+
+footer .top_part .soc_imgs img {
     margin-left: 5px;
 }
 
-
-footer .top_part .soc_imgs img:nth-child(1):hover{
+footer .top_part .soc_imgs img:nth-child(1):hover {
     border-radius: 100%;
-    box-shadow: 0px 0px 1px  #3b5998;
-}
-footer .top_part .soc_imgs img:nth-child(2):hover{
-    border-radius: 100%;
-    box-shadow: 0px 0px 1px  #577ca2;
-}
-footer .top_part .soc_imgs img:nth-child(3):hover{
-    border-radius: 100%;
-    box-shadow: 0px 0px 1px 5px  #d23e2b;
-}
-footer .top_part .soc_imgs img:nth-child(4):hover{
-    border-radius: 100%;
-    box-shadow: 0px 0px 1px  #4cc2ff;
-}
-footer .top_part .soc_imgs img:nth-child(5):hover{
-    border-radius: 100%;
-    box-shadow: 0px 0px 1px  #42c7f2;
+    box-shadow: 0px 0px 1px #3b5998;
 }
 
+footer .top_part .soc_imgs img:nth-child(2):hover {
+    border-radius: 100%;
+    box-shadow: 0px 0px 1px #577ca2;
+}
 
-.blog_icon{
-    float:left;
+footer .top_part .soc_imgs img:nth-child(3):hover {
+    border-radius: 100%;
+    box-shadow: 0px 0px 1px 5px #d23e2b;
+}
+
+footer .top_part .soc_imgs img:nth-child(4):hover {
+    border-radius: 100%;
+    box-shadow: 0px 0px 1px #4cc2ff;
+}
+
+footer .top_part .soc_imgs img:nth-child(5):hover {
+    border-radius: 100%;
+    box-shadow: 0px 0px 1px #42c7f2;
+}
+
+.blog_icon {
+    float: left;
     margin-right: 10px;
 }
-footer .bot_part .row .col-md-4 .central_text{
+
+footer .bot_part .row .col-md-4 .central_text {
     border-right: 1px solid #cacaca;
     border-left: 1px solid #cacaca;
 }
-footer .bot_part .share_icons{
+
+footer .bot_part .share_icons {
 
 }
-         /* ↑main page↑ */
 
-
-  /* @media screen and (max-width: 400px) {
-       header .small_menu{
-           margin-left: 0.25%;
-       }
-   }*/
+/* ↑main page↑ */
 
 
 
-   @media screen  and (max-width: 600px) {
-       header .logo>span{
-           display: none !important;
-       }
-       header .logo h1>span{
-           display: inline !important;
-       }
-       header .logo h1{
-           margin-left:10%;
-       }
-       footer .top_part .col-md-4 p, footer .top_part .col-md-3 p, footer .top_part .col-md-2 p{
-           text-align: center;
-       }
-       footer .top_part .soc_imgs{
-           float: none !important;
-           padding-left: 13%;
+/* ↓portfolio page↓ */
+article .our_works{
+    background-color: #f0f0f0;
+    margin-bottom: 50px;
+}
+article .portfolio_buttons>ul{
+    /*width: 90%;*/
+    width: 840px;
+    margin-left: auto;
+    margin-right: auto;
+}
+article .portfolio_buttons button.btn-default {
+    font-family: 'Museo Sans Cyrl 500';
+    color: #222222;
+    text-transform: none;
+    border: none;
+    /*margin-bottom: 5.5%;*/
+    /*margin-top: 5.5%;*/
 
-       }
-       header .large_menu{
-           display:none;
-       }
-       header .small_menu{
-           display: inline-block !important;
-           width:100%;
-           /*margin-right: 10%;*/
-           padding-left: 0px;
-       }
-       .header_right_block{
-           border: none;
-       }
-       article .over_slide{
-           display: none;
-       }
-       article .after_slider img{
-           margin-bottom: 15px;
-           margin-top: 25px;
-       }
-       article .after_slider .col-md-3{
-           padding: 0px;
-           margin-left: 15px;
-           margin-right: 15px;
-           border-bottom: 1px solid #f0f0f0;
-       }
-       article .after_slider .col-md-3:nth-last-child(1){
-           border: none;
-       }
-       footer .bot_part .share_icons{
-           display: -webkit-box;
-           display: -moz-box;
-           display: -ms-flexbox;
-           display: -webkit-flex;
-           display: flex;
-           -webkit-box-align: center;
-           -moz-box-align: center;
-           -ms-flex-align: center;
-           -webkit-align-items: center;
-           align-items: center;
-           -webkit-box-pack: center;
-           -moz-box-pack: center;
-           -ms-flex-pack: center;
-           -webkit-justify-content: center;
-           justify-content: center;
-           padding-bottom: 8%;
-       }
-   }
+    /*margin-bottom: 45px;*/
+    /*margin-top: 30px;*/
+}
+article .portfolio_buttons{
+    /*margin-left: 18%;*/
+    padding-top: 30px;
+    padding-bottom: 40px;
+    /* padding-top: 2.4%; */
+    /*padding-bottom: 3.1%;*/
+}
 
+article .portfolio_buttons button.btn-default:hover,
+article .portfolio_buttons button.btn-default:active,
+article .portfolio_buttons button.btn-default.active {
+    color: white;
+    border: none;
+    background-color: #33cc33
+}
 
-   @media screen  and (max-width: 1024px) {
-       .header_right_block{
-            border: none;
-       }
-   }
-
-
-   @media screen and (min-width: 1280px) {
-
-   }
+/* ↑portfolio page↑ */
 
 
 
 
-        /*Google nexus 7 & 5*/
+/* ↓work description↓ */
+.breadcrumb_ariol{
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+.breadcrumb_ariol>.breadcrumb{
+    background-color: inherit;
+    text-align: center;
+}
+.breadcrumb_ariol>.breadcrumb>li+li:before{
+    color: #222222;
+}
+.breadcrumb_ariol>.breadcrumb li a{
+    /*font-family: 'Museo Sans Cyrl 500';*/
+    /*font-size: 14px;*/
+    color: #222222;
+    border-bottom: 1px solid #222222;
+}
+.breadcrumb_ariol>.breadcrumb li a:hover, .breadcrumb_ariol>.breadcrumb li a:active{
+    /*border-bottom: none;*/
+}
+.breadcrumb_ariol>.breadcrumb li.active span{
+    color: #a5a5a5;
+    border-bottom: 1px solid #a5a5a5;
+}
+/*article .our_works .middle_text h1{
+    padding-bottom: 40px;
+}*/
+.breadcrumb_ariol + h1{
+    padding-bottom: 40px;
+}
+article .no-padding_right{
+    padding-right: 0px;
+}
+article .no-padding_left{
+    padding-left: 0px;
+}
+
+article .site_info{
+    background-color: #f9f9f9;
+}
+article .site_info p{
+    font-family: 'Museo Sans Cyrl 300';
+    /*padding: 30px 60px;*/
+    padding: 7% 14%;
+    line-height: 25px;
+}
+article .site_info strong{
+    font-family: 'Museo Sans Cyrl 700';
+    display: inline-block;
+    margin-top: 10px;
+}
+article .site_info strong:nth-child(1){
+    margin-top: 0px;
+}
+
+article .green_tooltip{
+    /*width: 330px;*/
+    width: 78%;
+    /*height: 90px;*/
+    /*background: url('../img/work-description/green-tooltip.png') no-repeat center center;*/
+    margin-top: 40px;
+    margin-bottom: 15px;
+    /*margin-left: 60px;*/
+    margin-left: 14.3%;
+    background-color: #33cc33;
+}
+article .green_tooltip>img{
+    position: absolute;
+    left: 44%;
+    /* top: -40px; */
+    bottom: 468px;
+    /* margin-bottom: 81px; */
+
+}
+.green_tooltip + img{
+    /*margin-left: 75px;*/
+    margin-left: 18.01%;
+    margin-top: 30px;
+}
+article .green_tooltip p{
+    color: #ffffff;
+    padding: 15px 15px;
+}
+article p.text_after_macbook{
+    display: block;
+    background-color: #f9f9f9;
+    /*padding: 50px 40px;*/
+    padding: 7% 5.6%;
+    /*margin-bottom: 50px;*/
+    margin-bottom: 7.18%;
+}
+article .page_examples>img:nth-last-child(1){
+    /*left: 43%;*/
+    /*position: absolute;*/
+    /*top: 25.5%;*/
+}
+
+article .full_description{
+    /*background: url('../img/work-description/trip-shop_bottom-background.png') no-repeat center bottom;*/
+    /*background-size:contain;*/
+}
+
+article .bottom_140px{
+    /*margin-bottom: 140px;*/
+    margin-bottom: 11%;
+}
+
+.loading{
+    opacity: 0.2;
+}
+.loading_animation{
+    z-index: 1;
+    position: absolute;
+    left: 46%;
+    /*opacity: 1;*/
+}
+.load_button.active, .load_button:active, .load_button:focus {
+    -webkit-background-size: 40px 40px;
+    background-size: 40px 40px;
+    -webkit-animation: progress-bar-stripes 2s linear infinite;
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, .15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%, transparent 75%, transparent);
+    background-color: #00cc33;
+    transition: width .6s ease;
+    color: white;
+}
+/* ↑work description↑ */
 
 
 
 
-   @media (max-width: 768px) {
-       footer .bot_part .row .col-md-4:nth-child(1){
-           margin-left: 20px;
-       }
-       footer .bot_part .central_text{
-           padding-top: 20px;
-           border: none;
-       }
-   }
+/* @media screen and (max-width: 400px) {
+     header .small_menu{
+         margin-left: 0.25%;
+     }
+ }*/
 
-   @media (min-width: 768px) and (max-width: 992px) {
-       /*header .logo h1 span{
-           display: none;
-       }
-       header .logo>span{
-           display: inline-block;
-           margin-left: -102px;
-       *//*margin-top: 10px;*//*
-       }*/
-       header .navigation{
-           padding-left: 0px;
-         /*margin-left: -70px;*/
-       }
-        header .header_right_block{
-           margin-top: 10px;
-       }
-       .over_slide {
-           top: 40%;
-       }
-       footer .bot_part .row .col-md-4:nth-child(1) p{
-           padding-top: 14px;
-       }
-       footer .bot_part .row .col-md-4:nth-child(1) p>a{
-           display: inline-block;
-           /*margin-top: 10px;*/
-       }
-   }
+@media screen  and (max-width: 600px) {
+    /* ↓main page↓ */
+    header .logo > span {
+        display: none !important;
+    }
 
-   @media (min-width: 992px) and (max-width: 1200px) {
+    header .logo h1 > span {
+        display: inline !important;
+    }
 
-   }
+    header .logo h1 {
+        margin-left: 10%;
+    }
+    header .logo{
+        display: none;
+    }
+
+    .pagination {
+        bottom: -10px;
+        left: 83px;
+    }
+    article .color_divider{
+        margin-top: -0.93%;
+    }
+
+    footer .top_part .col-md-4 p, footer .top_part .col-md-3 p, footer .top_part .col-md-2 p {
+        text-align: center;
+    }
+
+    footer .top_part .soc_imgs {
+        float: none !important;
+        padding-left: 13%;
+
+    }
+
+    header .large_menu {
+        display: none;
+    }
+
+    header .small_menu {
+        display: inline-block !important;
+        width: 100%;
+        /*margin-right: 10%;*/
+        /*padding-left: 0px;*/
+    }
+
+    .header_right_block {
+        border: none;
+    }
+
+    article .over_slide {
+        display: none;
+    }
+
+    article .block_works img, article .bottom_140px img{
+        margin-bottom: 15px;
+        margin-top: 25px;
+    }
+
+    article .block_works .col-md-3, article .bottom_140px .col-md-4{
+        padding: 0px;
+        margin-left: 15px;
+        margin-right: 15px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    article .block_works .col-md-3:nth-last-child(1), article .bottom_140px .col-md-4:nth-last-child(1){
+        border: none;
+    }
+
+    footer .bot_part .share_icons {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -moz-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -moz-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        padding-bottom: 8%;
+    }
+    /* ↑main page↑ */
+
+
+    /* ↓portfolio page↓ */
+    article .portfolio_buttons>ul{
+        width: 93%;
+    }
+    article .portfolio_buttons button.btn-default {
+        font-size: 13px;
+    }
+    /* ↑portfolio page↑ */
+
+
+
+    /* ↓work description↓ */
+    article .middle_text h1 {
+        font-size: 28px;
+    }
+    article .no-padding_right{
+        padding-right: 15px;
+    }
+    article .no-padding_left{
+        padding-left: 15px;
+    }
+    article .site_info p{
+        padding: 30px 20px;
+        font-size: 13px;
+    }
+    article .green_tooltip{
+        /*margin-left: 11.3%;*/
+    }
+    .green_tooltip + img{
+        /*margin-left: 14%;*/
+        margin-left: 11%;
+    }
+    article .page_examples>img:nth-last-child(1){
+        /*display: none;*/
+        margin-bottom: 10px;
+    }
+
+    /* ↑work description↑ */
+
+    article .loading_animation{
+        left: 37%;
+    }
+}
+
+@media screen  and (max-width: 1024px) {
+    .header_right_block {
+        border: none;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+
+}
+
+/*Google nexus 7 & 5*/
+
+@media (max-width: 768px) {
+    footer .bot_part .row .col-md-4:nth-child(1) {
+        margin-left: 20px;
+    }
+
+    footer .bot_part .central_text {
+        padding-top: 20px;
+        border: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+    /*header .logo h1 span{
+        display: none;
+    }
+    header .logo>span{
+        display: inline-block;
+        margin-left: -102px;
+    *//*margin-top: 10px;*//*
+    }*/
+    header .navigation {
+        padding-left: 0px;
+        /*margin-left: -70px;*/
+    }
+
+    header .header_right_block {
+        margin-top: 10px;
+    }
+
+    .over_slide {
+        top: 40%;
+    }
+    .pagination {
+        bottom: 20px;
+    }
+
+    /* ↓portfolio page↓ */
+    .loading_animation{
+        left: 43%;
+    }
+    /* ↑portfolio page↑ */
+
+
+    /* ↓work description↓ */
+    article .site_info p{
+        font-size: 12px;
+        padding: 7% 6%;
+    }
+
+    article .green_tooltip>img{
+        bottom: 381px;
+    }
+    .green_tooltip + img{
+        max-width: 73%;
+        margin-left: 17%;
+    }
+    article .page_examples>img:nth-last-child(1){
+        /*top: 42%;*/
+    }
+    /* ↑work description↑ */
+
+
+    footer .bot_part .row .col-md-4:nth-child(1) p {
+        padding-top: 14px;
+    }
+
+    footer .bot_part .row .col-md-4:nth-child(1) p > a {
+        display: inline-block;
+        /*margin-top: 10px;*/
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+
+}
+
