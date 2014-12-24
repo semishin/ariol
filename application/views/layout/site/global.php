@@ -22,6 +22,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/ariolby/js/bootstrap.min.js"></script>
+
+    <!-- Include slider -->
+    <link rel="stylesheet" href="/ariolby/js/Swiper-master/src/idangerous.swiper.css">
+    <!-- <script defer src="js/Swiper-master/dist/idangerous.swiper.min.js"></script>   --> <!--  ******   -->
+    <script defer src="/ariolby/js/Swiper-master/src/idangerous.swiper.js"></script>
+
+    <!-- Include  user-js -->
+    <script src="/ariolby/js/script.js"></script>
 </head>
 <body>
 
@@ -56,7 +64,7 @@
                         </ul>
                     </li>
 
-                    <li><a href="#">Работы</a></li>
+                    <li><a href="/ourproduct">Работы</a></li>
                     <li><a href="/articles">Блог</a></li>
                     <li><a href="/kontaktyi">Контакты</a></li>
 
@@ -91,7 +99,7 @@
                                     <li><a href="#">drop-link-3</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Работы</a></li>
+                            <li><a href="/ourproduct">Работы</a></li>
                             <li><a href="#">Блог</a></li>
                             <li><a href="#">Контакты</a></li>
                         </ul>

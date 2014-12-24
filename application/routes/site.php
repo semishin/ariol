@@ -41,16 +41,15 @@ Route::set('site-article', 'article/<url>')
         'action'     => 'item',
     ));
 
-
-
-
-
 Route::set('site-ourproduct', 'ourproduct')
     ->defaults(array(
         'directory' => 'site',
         'controller' => 'ourproduct',
         'action'     => 'index',
     ));
+
+
+
 
 Route::set('site-comment', 'comment')
     ->defaults(array(

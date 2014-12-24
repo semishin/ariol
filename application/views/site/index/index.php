@@ -1,29 +1,29 @@
 <article>
     <div class="row">
-        <?php foreach ($slide as $item) { ?>
-            <div class="col-md-12">
-                <img src="<?php echo Lib_Image::crop($item->image, 'slide',$item->id, 1500, 588); ?>" alt="slide-1" class="img-responsive">
+        <div class="col-md-12">
 
-                <div class="color_divider"></div>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <?php foreach ($slide as $item) { ?>
+                        <!--First Slide-->
+                        <div class="swiper-slide">
+                            <!-- Any HTML content of the first slide goes here -->
+                            <img src="<?php echo Lib_Image::crop($item->image, 'slide',$item->id, 1500, 588); ?>" alt="<?php echo $item->name ?>" class="img-responsive">
 
+                            <div class="over_slide  col-md-4 col-sm-6">
+                                <h3><?php echo $item->name ?></h3>
 
+                                <p><?php echo $item->content ?></p>
 
-                <div class="over_slide col-md-4 col-sm-6">
-                    <h2><?php echo $item->name ?></h2>
-
-                    <p><?php echo $item->content ?></p>
-
-                    <ul class="list-inline">
-
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                    </ul>
+                            </div>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
-        <?php } ?>
+            <div class="clearfix"></div>
+            <div class="color_divider"></div>
+            <div class="pagination"></div>
+        </div>
     </div>
 
     <div class="middle_text">
@@ -33,7 +33,7 @@
         <p class="text-center">Мы любим, то что делаем и с гордостью показываем это Вам.</p>
     </div>
 
-    <div class="after_slider">
+    <div class="block_works">
         <div class="row">
             <?php foreach ($ourproduct as $item) { ?>
                 <div class="col-md-3 col-sm-6">
