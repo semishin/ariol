@@ -10,6 +10,8 @@
     <!-- Bootstrap -->
     <link href="/ariolby/css/bootstrap.min.css" rel="stylesheet">
     <link href="/ariolby/css/style.css" rel="stylesheet">
+    <!-- Add fancyBox -->
+    <link rel="stylesheet" href="/ariolby/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,7 +24,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/ariolby/js/bootstrap.min.js"></script>
-
+    <script type="text/javascript" src="/ariolby/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
     <!-- Include slider -->
     <link rel="stylesheet" href="/ariolby/js/Swiper-master/src/idangerous.swiper.css">
     <!-- <script defer src="js/Swiper-master/dist/idangerous.swiper.min.js"></script>   --> <!--  ******   -->
@@ -64,7 +66,7 @@
                         </ul>
                     </li>
 
-                    <li><a href="/ourproduct">Работы</a></li>
+                    <li><a href="/portfolio">Работы</a></li>
                     <li><a href="/articles">Блог</a></li>
                     <li><a href="/kontaktyi">Контакты</a></li>
 
@@ -99,7 +101,7 @@
                                     <li><a href="#">drop-link-3</a></li>
                                 </ul>
                             </li>
-                            <li><a href="/ourproduct">Работы</a></li>
+                            <li><a href="/portfolio">Работы</a></li>
                             <li><a href="#">Блог</a></li>
                             <li><a href="#">Контакты</a></li>
                         </ul>

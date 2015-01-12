@@ -51,6 +51,7 @@
         </div>
 
     </div>
-
-    <p class="text-center"><button type="button" class="btn btn-default">Ещё больше работ</button></p>
+    <?php if ($count_product > 8) { ?>
+        <p class="text-center"><button on_main="1" type="button" id="more_items" class="btn btn-default">Ещё больше работ</button></p>
+    <?php } ?>
 </article>

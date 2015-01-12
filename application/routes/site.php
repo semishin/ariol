@@ -34,18 +34,47 @@ Route::set('site-articles', 'articles(/<page>)', array ('page' => '\d+'))
         'action'     => 'index',
     ));
 
-Route::set('site-article', 'article/<url>')
+Route::set('site-articles-more', 'articles/more')
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'article',
+        'action'     => 'more',
+    ));
+
+Route::set('site-article', 'articles/<url>')
     ->defaults(array(
         'directory' => 'site',
         'controller' => 'article',
         'action'     => 'item',
     ));
 
-Route::set('site-ourproduct', 'ourproduct')
+Route::set('site-portfolio-more', 'portfolio/more')
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'ourproduct',
+        'action'     => 'more',
+    ));
+
+Route::set('site-portfolio-category', 'portfolio/category')
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'ourproduct',
+        'action'     => 'category',
+    ));
+
+
+Route::set('site-ourproducts', 'portfolio')
     ->defaults(array(
         'directory' => 'site',
         'controller' => 'ourproduct',
         'action'     => 'index',
+    ));
+
+Route::set('site-ourproduct', 'portfolio/<url>')
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'ourproduct',
+        'action'     => 'item',
     ));
 
 
