@@ -8,12 +8,17 @@ return array(
 	'form' => array(
 		'priorities' => array(
 			'Общие' => 100,
-            'Почта' => 200
+            'Соцсети' => 200,
+            'Почта' => 300,
 		),
 		'fieldgroups' => array(
             'Почта' => array(
                 'mailer.hostname' => array(
                     'label' => 'Хост',
+                    'field' => new CM_Field_String(),
+                ),
+                'mailer.admin' => array(
+                    'label' => 'Почта администратора',
                     'field' => new CM_Field_String(),
                 ),
                 'mailer.from' => array(
@@ -38,11 +43,46 @@ return array(
                 )
             ),
 			'Общие' => array(
-				 'price.update' => array(
-                    'label' => 'Обновить прайс',
-                    'field' => new CM_Field_Boolean(),
+                'properties.address' => array(
+                    'label' => 'Адрес',
+                    'field' => new CM_Field_Text(),
                 ),
-			)
+                'properties.phone1' => array(
+                    'label' => 'Номер телефона 1',
+                    'field' => new CM_Field_String(),
+                ),
+                'properties.phone2' => array(
+                    'label' => 'Номер телефона 2',
+                    'field' => new CM_Field_String(),
+                ),
+                'properties.email' => array(
+                    'label' => 'Email',
+                    'field' => new CM_Field_String(),
+                )
+			),
+            'Соцсети' => array(
+                'social.facebook' => array(
+                    'label' => 'Facebook',
+                    'field' => new CM_Field_String(),
+                ),
+                'social.vk' => array(
+                    'label' => 'VK',
+                    'field' => new CM_Field_String(),
+                ),
+                'social.g+' => array(
+                    'label' => 'G+',
+                    'field' => new CM_Field_String(),
+                ),
+                'social.skype' => array(
+                    'label' => 'Skype',
+                    'field' => new CM_Field_String(),
+                ),
+                'social.twitter' => array(
+                    'label' => 'Twitter',
+                    'field' => new CM_Field_String(),
+                )
+            )
+
 		)
 	)
 );

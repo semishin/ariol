@@ -13,6 +13,13 @@ Route::set('site-index', '')
 		'name' => 'Главная'
 	));
 
+Route::set('site-brif', 'brif')
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'index',
+        'action' => 'brif'
+    ));
+
 Route::set('site-kontaktyi', 'kontaktyi')
     ->defaults(array(
         'directory' => 'site',
@@ -77,6 +84,20 @@ Route::set('site-ourproduct', 'portfolio/<url>')
         'action'     => 'item',
     ));
 
+Route::set('site-feedb', 'feedb/add')
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'feedb',
+        'action'     => 'add',
+    ));
+
+Route::set('site-brief', 'brief/add')
+    ->defaults(array(
+        'directory' => 'site',
+        'controller' => 'brief',
+        'action'     => 'add',
+    ));
+
 
 
 
@@ -91,13 +112,6 @@ Route::set('site-comments', 'comments/add')
     ->defaults(array(
         'directory' => 'site',
         'controller' => 'comment',
-        'action'     => 'add',
-    ));
-
-Route::set('site-brief', 'brief/add')
-    ->defaults(array(
-        'directory' => 'site',
-        'controller' => 'brief',
         'action'     => 'add',
     ));
 

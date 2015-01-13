@@ -11,7 +11,9 @@
     <link href="/ariolby/css/bootstrap.min.css" rel="stylesheet">
     <link href="/ariolby/css/style.css" rel="stylesheet">
     <!-- Add fancyBox -->
-    <link rel="stylesheet" href="/ariolby/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/ariolby/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,11 +22,13 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/ariolby/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/ariolby/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="/ariolby/js/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
     <!-- Include slider -->
     <link rel="stylesheet" href="/ariolby/js/Swiper-master/src/idangerous.swiper.css">
     <!-- <script defer src="js/Swiper-master/dist/idangerous.swiper.min.js"></script>   --> <!--  ******   -->
@@ -43,7 +47,7 @@
             <div class="col-md-3 col-sm-4">
 
                 <div class="logo">
-                    <h1>Ariol <span>web development</span></h1>
+                    <h1><a href="/" style="color: inherit">Ariol <span>web development</span></a></h1>
                     <span><br><br><br><br>web development</span>
                 </div>
 
@@ -54,7 +58,7 @@
                 <ul class="nav nav-pills navigation">
 
                     <li><a href="/">Главная</a></li>
-                    <li><a href="/o-kompanii"> О студии</a></li>
+                    <li><a href="/o-kompanii"> О компании</a></li>
 
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Услуги<i><span class="caret"></span></i>
@@ -110,9 +114,9 @@
             </div>
 
             <div class="col-md-3 col-sm-3 header_right_block">
-                <p class="text-center"><button type="button" class="btn btn-default">Заполните Бриф</button></p>
+                <p class="text-center"><a href="/brif" class="fancybox fancybox.ajax"><button type="button" class="btn btn-default">Заполните Бриф</button></a></p>
                 <p class="text-center"><small>или позвоните</small></p>
-                <p class="text-center"><strong>+375 25 913-23-90</strong></p>
+                <p class="text-center"><strong><?php echo Kohana::$config->load('properties.phone1'); ?></strong></p>
             </div>
         </div>
 
@@ -135,21 +139,21 @@
                                 </div>
 
                                 <div class="col-md-3 col-sm-4">
-                                    <p>+375 (25) 913 23 90 life<br>
-                                        +375 (44) 554 05 51 velcom</p>
+                                    <p><?php echo Kohana::$config->load('properties.phone1'); ?> life<br>
+                                        <?php echo Kohana::$config->load('properties.phone2'); ?> velcom</p>
                                 </div>
 
                                 <div class="col-md-2 col-sm-6">
-                                    <p><a href="#">fixit.by@gmail.com</a></p>
+                                    <p><a href="<?php echo Kohana::$config->load('properties.email'); ?>">fixit.by@gmail.com</a></p>
                                 </div>
 
                                 <div class="col-md-3 col-sm-6">
                                     <div class="soc_imgs">
-                                        <a href="#"><img src="/ariolby/img/fb.png" alt="fb"></a>
-                                        <a href="#"><img src="/ariolby/img/vk.png" alt="vk"></a>
-                                        <a href="#"><img src="/ariolby/img/g.png" alt="g+"></a>
-                                        <a href="#"><img src="/ariolby/img/skype.png" alt="skype"></a>
-                                        <a href="#"><img src="/ariolby/img/tw.png" alt="tw"></a>
+                                        <a href="<?php echo Kohana::$config->load('social.facebook'); ?>"><img src="/ariolby/img/fb.png" alt="fb"></a>
+                                        <a href="<?php echo Kohana::$config->load('social.vk'); ?>"><img src="/ariolby/img/vk.png" alt="vk"></a>
+                                        <a href="<?php echo Kohana::$config->load('social.g+'); ?>"><img src="/ariolby/img/g.png" alt="g+"></a>
+                                        <a href="<?php echo Kohana::$config->load('social.skype'); ?>"><img src="/ariolby/img/skype.png" alt="skype"></a>
+                                        <a href="<?php echo Kohana::$config->load('social.twitter'); ?>"><img src="/ariolby/img/tw.png" alt="tw"></a>
                                     </div>
                                 </div>
                             </div>

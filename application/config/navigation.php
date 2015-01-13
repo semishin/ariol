@@ -34,6 +34,36 @@ return array(
         'parent' => 'admin.article.index'
     ),
 
+    'admin.feedb.index' => array(
+        'title' => 'Список обратной связи',
+        'route' => 'admin-feedb'
+    ),
+    'admin.feedb.edit' => array(
+        'title' => 'Редактирование сообщений',
+        'route' => 'admin-feedb:edit',
+        'parent' => 'admin.feedb.index'
+    ),
+    'admin.feedb.create' => array(
+        'title' => 'Добавление сообщений',
+        'route' => 'admin-feedb:create',
+        'parent' => 'admin.feedb.index'
+    ),
+
+    'admin.brief.index' => array(
+        'title' => 'Список заявок',
+        'route' => 'admin-brief'
+    ),
+    'admin.brief.edit' => array(
+        'title' => 'Редактирование заявок',
+        'route' => 'admin-brief:edit',
+        'parent' => 'admin.brief.index'
+    ),
+    'admin.brief.create' => array(
+        'title' => 'Добавление заявки',
+        'route' => 'admin-brief:create',
+        'parent' => 'admin.brief.index'
+    ),
+
 
 
 
@@ -50,21 +80,6 @@ return array(
         'title' => 'Добавление отзыва',
         'route' => 'admin-comment:create',
         'parent' => 'admin.comment.index'
-    ),
-
-    'admin.brief.index' => array(
-        'title' => 'Список заявок',
-        'route' => 'admin-brief'
-    ),
-    'admin.brief.edit' => array(
-        'title' => 'Редактирование заявок',
-        'route' => 'admin-brief:edit',
-        'parent' => 'admin.brief.index'
-    ),
-    'admin.brief.create' => array(
-        'title' => 'Добавление заявки',
-        'route' => 'admin-brief:create',
-        'parent' => 'admin.brief.index'
     ),
 
     'admin.news_category.index' => array(

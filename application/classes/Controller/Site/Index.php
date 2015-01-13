@@ -19,4 +19,9 @@ class Controller_Site_Index extends Controller_Site
         //$this->template->slides=ORM::factory('Slides')->where('active','=',1)->order_by('position','ASC')->find_all();
         //$this->template->clients=ORM::factory('Clients')->fetchActive();
     }
+
+    public function action_brif()
+    {
+        $this->template->set_layout('site/index/brif');
+    }
 }

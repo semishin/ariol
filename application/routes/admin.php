@@ -20,6 +20,20 @@ Route::set('admin-article', $adminPrefix . 'article(/<action>(/<id>))')
         'action' => 'index'
     ));
 
+Route::set('admin-feedb', $adminPrefix . 'feedb(/<action>(/<id>))')
+    ->defaults(array(
+        'directory' => 'admin',
+        'controller' => 'feedb',
+        'action' => 'index'
+    ));
+
+Route::set('admin-brief', $adminPrefix . 'brief(/<action>(/<id>))')
+    ->defaults(array(
+        'directory' => 'admin',
+        'controller' => 'brief',
+        'action' => 'index'
+    ));
+
 
 
 Route::set('admin-news_category', $adminPrefix . 'news_category(/<action>(/<id>))')
@@ -47,13 +61,6 @@ Route::set('admin-ourproduct', $adminPrefix . 'ourproduct(/<action>(/<id>))')
     ->defaults(array(
         'directory' => 'admin',
         'controller' => 'ourproduct',
-        'action' => 'index'
-    ));
-
-Route::set('admin-brief', $adminPrefix . 'brief(/<action>(/<id>))')
-    ->defaults(array(
-        'directory' => 'admin',
-        'controller' => 'brief',
         'action' => 'index'
     ));
 

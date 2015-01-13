@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Site_Brief extends Controller_Site
+class Controller_Site_Feedb extends Controller_Site
 {
     public function action_add()
     {
@@ -11,12 +11,12 @@ class Controller_Site_Brief extends Controller_Site
             $phone = $this->request->post('phone');
             $text = $this->request->post('text');
 
-            $brief = ORM::factory('Brief');
-            $brief->email = $email;
-            $brief->name = $name;
-            $brief->phone = $phone;
-            $brief->text = $text;
-            $brief->save();
+            $feedb = ORM::factory('Feedb');
+            $feedb->email = $email;
+            $feedb->name = $name;
+            $feedb->phone = $phone;
+            $feedb->text = $text;
+            $feedb->save();
 
             Email::send(Kohana::$config->load('mailer.admin'), array('info@ironprod.by', 'Ironprod'),
                 'Новая заявка в контактах',
