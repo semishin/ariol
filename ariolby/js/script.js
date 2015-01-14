@@ -2,10 +2,6 @@ $( document ).ready(function() {
 
     $(".fancybox").fancybox();
 
-    if($("#gmap").length){
-        initializeMap(53.894262, 27.481949, 14);
-    }
-
     $(function(){
         var mySwiper = $('.swiper-container').swiper({
             //Your options here:
@@ -149,6 +145,11 @@ $( document ).ready(function() {
         });
     });
 
+
+    if($("#gmap").length){
+        initializeMap(53.894295, 27.481859, 13);
+    }
+
 });
 
 function initializeMap(lat, lng, zoom) {
@@ -164,6 +165,7 @@ function initializeMap(lat, lng, zoom) {
         ]
     }];
     var mapOptions = {
+        scrollwheel: false,
         zoom: zoom,
         center: qmap,
         mapTypeControlOptions: {

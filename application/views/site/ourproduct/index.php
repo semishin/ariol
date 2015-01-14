@@ -20,7 +20,6 @@
         </div>
     </div>
 
-
     <div class="block_works main"><!-- loading -->
         <div class="row">
             <div style="display: none;" class="loading_animation">
@@ -39,29 +38,10 @@
                 </div>
             <?php } ?>
         </div>
-
     </div>
-
-
-    <!-- <div class="bs-example">
-         <div class="progress progress-striped active">
-             <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 1%">
-                 <span class="sr-only">Nothing change</span>
-             </div>
-         </div>
-     </div>-->
-
-
-    <!-- <div class="progress progress-striped active" style="width: 168px; height: 30px; margin-left: 50px;">
-         <div class="progress-bar" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
-
-         </div>
-     </div>-->
-    <!--<button style="position: absolute; bottom: -1624px; left: 84px;" type="button" class="btn btn-default load_button">
-        Ещё больше работ
-    </button>-->
 
     <?php if ($count_product > 8) { ?>
         <p class="text-center"><button on_main="0" type="button" id="more_items" class="btn btn-default load_button">Ещё больше работ</button></p>
     <?php } ?>
+
 </article>

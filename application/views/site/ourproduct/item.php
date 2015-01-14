@@ -1,4 +1,5 @@
 <article>
+
     <div class="row">
         <div class="col-md-12">
             <div class="our_works">
@@ -18,8 +19,6 @@
         </div>
     </div>
 
-
-
     <div class="row">
         <div class="col-md-12">
             <div class="full_description">
@@ -34,8 +33,6 @@
                         <br><br>
                     </div>
                 </div>
-
-
 
                 <div class="row">
                     <div class="col-md-8 col-sm-8 no-padding_right">
@@ -80,10 +77,6 @@
 
                     </div>
                 </div>
-
-
-              <!--  <img src="/ariolby/img/work-description/trip-shop_bottom-background.png" class="img-responsive"> -->
-
             </div>
         </div>
     </div>
@@ -119,6 +112,5 @@
             </div>
         </div>
     </div>
-
 
 </article>

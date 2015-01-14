@@ -7,8 +7,15 @@ class Controller_Site_Article extends Controller_Site
     public function action_index()
     {
         $this->set_metatags_and_content('', 'page');
-        $article = ORM::factory('Article')->where('active','=',1)->order_by('position','asc')->limit(self::LIMIT_ON_PAGE)->find_all()->as_array();
-        $count_articles = ORM::factory('Article')->where('active','=',1)->count_all();
+        $article = ORM::factory('Article')
+            ->where('active','=',1)
+            ->order_by('position','asc')
+            ->limit(self::LIMIT_ON_PAGE)
+            ->find_all()
+            ->as_array();
+        $count_articles = ORM::factory('Article')
+            ->where('active','=',1)
+            ->count_all();
         $this->template->count_articles = $count_articles;
         $this->template->article = $article;
     }
@@ -16,11 +23,11 @@ class Controller_Site_Article extends Controller_Site
     public function action_item()
     {
         $this->set_metatags_and_content($this->param('url'), 'article');
-        $article = ORM::factory('Article')->where('active','=',1)->order_by('position','asc')->find_all();
+        $article = ORM::factory('Article')
+            ->where('active','=',1)
+            ->order_by('position','asc')
+            ->find_all();
         $this->template->article = $article;
-
-        //$this->template->category = $this->_model->category;
-
     }
 
     public function action_more()
@@ -31,10 +38,17 @@ class Controller_Site_Article extends Controller_Site
             $this->forward_404();
         }
 
-        $count_articles = ORM::factory('Article')->where('active','=',1)->count_all();
+        $count_articles = ORM::factory('Article')
+            ->where('active','=',1)
+            ->count_all();
 
-        $article = ORM::factory('Article')->where('active','=',1)->order_by('position','asc')->limit(self::LIMIT_ON_PAGE)
-            ->offset($offset)->find_all()->as_array();
+        $article = ORM::factory('Article')
+            ->where('active','=',1)
+            ->order_by('position','asc')
+            ->limit(self::LIMIT_ON_PAGE)
+            ->offset($offset)
+            ->find_all()
+            ->as_array();
 
 
         exit(

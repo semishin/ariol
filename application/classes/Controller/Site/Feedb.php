@@ -18,16 +18,7 @@ class Controller_Site_Feedb extends Controller_Site
             $feedb->text = $text;
             $feedb->save();
 
-            Email::send(Kohana::$config->load('mailer.admin'), array('info@ironprod.by', 'Ironprod'),
-                'Новая заявка в контактах',
-                'Имя - '.$name.'<br/>'.
-                'Email - '.$email.'<br/>'.
-                'Телефон - '.$phone.'<br/>'.
-                'Текст письма - '. $text.'<br/>',
-                /*html*/true
-            );
-
-            Email::send('info@ironprod.by', array('info@ironprod.by', 'Ironprod'),
+            Email::send(Kohana::$config->load('mailer.admin'), array('info@ariol.by', 'Ariol'),
                 'Новая заявка в контактах',
                 'Имя - '.$name.'<br/>'.
                 'Email - '.$email.'<br/>'.

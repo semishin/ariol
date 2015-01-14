@@ -13,16 +13,8 @@ class Controller_Site extends Controller
 		
 		$this->template->set_layout('layout/site/global');
 
-
-        $service_category = ORM::factory('Service_Category')->where('active','=',1)->order_by('position','asc')->find_all();
-        $service = ORM::factory('Service')->where('active','=',1)->order_by('position','asc')->find_all();
-        $this->template->service_category = $service_category;
-        $this->template->service = $service;
-		
-		$this->template->last_news_item = ORM::factory('News')->where('category_id', '=', 1)
-											->where('active', '=', 1)
-											->order_by('id', 'DESC')
-											->limit(1)->find();
+        $services = ORM::factory('Service')->where('active','=',1)->order_by('position','asc')->find_all();
+        $this->template->services = $services;
 	}
 	
     public function set_metatags_and_content($url, $name = 'page', $items_on_page = null)

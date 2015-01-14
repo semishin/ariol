@@ -10,6 +10,7 @@
     <!-- Bootstrap -->
     <link href="/ariolby/css/bootstrap.min.css" rel="stylesheet">
     <link href="/ariolby/css/style.css" rel="stylesheet">
+
     <!-- Add fancyBox -->
     <link rel="stylesheet" href="/ariolby/js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
 
@@ -58,15 +59,15 @@
                 <ul class="nav nav-pills navigation">
 
                     <li><a href="/">Главная</a></li>
-                    <li><a href="/o-kompanii"> О компании</a></li>
+                    <li><a href="/o-kompanii">О компании</a></li>
 
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#"> Услуги<i><span class="caret"></span></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">drop-down-menu1</a></li>
-                            <li><a href="#">drop-down-menu2</a></li>
-                            <li><a href="#">drop-down-menu3</a></li>
+                            <?php foreach ($services as $item) { ?>
+                                <li><a href="/service/<?php echo $item->url ?>"><?php echo $item->name ?></a></li>
+                            <?php } ?>
                         </ul>
                     </li>
 
@@ -93,21 +94,21 @@
 
                     <div class="collapse navbar-collapse" id="example-navbar-collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Главная</a></li>
-                            <li><a href="#">О студии</a></li>
+                            <li class="active"><a href="/">Главная</a></li>
+                            <li><a href="/o-kompanii">О компании</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     Услуги <i><b class="caret"></b></i>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="#">drop-link-1</a></li>
-                                    <li><a href="#">drop-link-2</a></li>
-                                    <li><a href="#">drop-link-3</a></li>
+                                    <?php foreach ($services as $item) { ?>
+                                        <li><a href="/service/<?php echo $item->url ?>"><?php echo $item->name ?></a></li>
+                                    <?php } ?>
                                 </ul>
                             </li>
                             <li><a href="/portfolio">Работы</a></li>
-                            <li><a href="#">Блог</a></li>
-                            <li><a href="#">Контакты</a></li>
+                            <li><a href="/articles">Блог</a></li>
+                            <li><a href="/kontaktyi">Контакты</a></li>
                         </ul>
                     </div>
                 </nav>

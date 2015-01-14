@@ -64,54 +64,6 @@ return array(
         'parent' => 'admin.brief.index'
     ),
 
-
-
-
-    'admin.comment.index' => array(
-        'title' => 'Список отзывов',
-        'route' => 'admin-comment'
-    ),
-    'admin.comment.edit' => array(
-        'title' => 'Редактирование отзыва',
-        'route' => 'admin-comment:edit',
-        'parent' => 'admin.comment.index'
-    ),
-    'admin.comment.create' => array(
-        'title' => 'Добавление отзыва',
-        'route' => 'admin-comment:create',
-        'parent' => 'admin.comment.index'
-    ),
-
-    'admin.news_category.index' => array(
-        'title' => 'Список категорий новостей',
-        'route' => 'admin-news_category'
-    ),
-    'admin.news_category.edit' => array(
-        'title' => 'Редактирование категории новостей',
-        'route' => 'admin-news_category:edit',
-        'parent' => 'admin.news_category.index'
-    ),
-    'admin.news_category.create' => array(
-        'title' => 'Добавление категории новостей',
-        'route' => 'admin-news_category:create',
-        'parent' => 'admin.news_category.index'
-    ),
-
-    'admin.news.index' => array(
-        'title' => 'Список новостей',
-        'route' => 'admin-news'
-    ),
-    'admin.news.edit' => array(
-        'title' => 'Редактирование новости',
-        'route' => 'admin-news:edit',
-        'parent' => 'admin.news.index'
-    ),
-    'admin.news.create' => array(
-        'title' => 'Добавление новости',
-        'route' => 'admin-news:create',
-        'parent' => 'admin.news.index'
-    ),
-
     'admin.ourproduct.index' => array(
         'title' => 'Список наших работ',
         'route' => 'admin-ourproduct'
@@ -155,6 +107,24 @@ return array(
         'title' => 'Добавление услуги',
         'route' => 'admin-service:create',
         'parent' => 'admin.service.index'
+    ),
+
+
+
+
+    'admin.comment.index' => array(
+        'title' => 'Список отзывов',
+        'route' => 'admin-comment'
+    ),
+    'admin.comment.edit' => array(
+        'title' => 'Редактирование отзыва',
+        'route' => 'admin-comment:edit',
+        'parent' => 'admin.comment.index'
+    ),
+    'admin.comment.create' => array(
+        'title' => 'Добавление отзыва',
+        'route' => 'admin-comment:create',
+        'parent' => 'admin.comment.index'
     ),
 
     'admin.service_category.index' => array(

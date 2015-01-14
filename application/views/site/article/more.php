@@ -5,9 +5,9 @@
             <div class="caption">
                 <a href="/articles/<?php echo $item->url ?>"><span class="article_name"><?php echo $item->name ?></span></a>
                 <ul class="list-inline">
-                    <li><img src="img/icons/icon_calendar-16.png" alt="calendar"> <?php echo $item->date ?></li>
-                    <li><img src="img/icons/icon_comments-16.png" alt="comments"> ? 9 ?</li>
-                    <li><img src="img/icons/icon_views-16.png" alt="views"> ? 12 ?</li>
+                    <li><img src="/ariolby/img/icons/icon_calendar-16.png" alt="calendar"> <?php echo $item->date ?></li>
+                    <li><img src="/ariolby/img/icons/icon_comments-16.png" alt="comments"> ? 9 ?</li>
+                    <li><img src="/ariolby/img/icons/icon_views-16.png" alt="views"> ? 12 ?</li>
                 </ul>
             </div>
         </div>

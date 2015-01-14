@@ -43,10 +43,10 @@ class Model_Service extends ORM
 
     protected $_grid_columns = array(
         'name' => null,
-        'category_id' => array(
-            'type' => 'template',
-            'template' => '${category_name}'
-        ),
+//        'category_id' => array(
+//            'type' => 'template',
+//            'template' => '${category_name}'
+//        ),
         'position' => null,
         'active' => null,
         'edit' => array(
@@ -77,7 +77,7 @@ class Model_Service extends ORM
     {
         return array(
             'name',
-            'category_id',
+//            'category_id',
             'position',
             'active'
         );

@@ -6,12 +6,25 @@ class Controller_Site_Ourproduct extends Controller_Site
 
     public function action_index()
     {
-        $ourproduct = ORM::factory('Ourproduct')->where('active','=',1)->where('on_main','=',1)->order_by('position','asc')->limit(self::LIMIT_ON_PAGE)->find_all()->as_array();
-        $ourproduct_category = ORM::factory('Ourproduct_Category')->where('active','=',1)->order_by('position','asc')->find_all()->as_array();
+        $ourproduct = ORM::factory('Ourproduct')
+            ->where('active','=',1)
+            ->order_by('position','asc')
+            ->limit(self::LIMIT_ON_PAGE)
+            ->find_all()
+            ->as_array();
+
+        $ourproduct_category = ORM::factory('Ourproduct_Category')
+            ->where('active','=',1)
+            ->order_by('position','asc')
+            ->find_all()
+            ->as_array();
+
+        $count_product = ORM::factory('Ourproduct')
+            ->where('active','=',1)
+            ->count_all();
+
         $this->template->ourproduct = $ourproduct;
         $this->template->ourproduct_category = $ourproduct_category;
-
-        $count_product = ORM::factory('Ourproduct')->where('active','=',1)->where('on_main','=',1)->count_all();
         $this->template->count_product = $count_product;
 
         $this->template->set_layout('layout/site/global');
@@ -35,7 +48,20 @@ class Controller_Site_Ourproduct extends Controller_Site
 
         $count_product = ORM::factory('Ourproduct')->where('active','=',1);
         if ($category_id) {
-            $count_product = $count_product->where('category_id', '=', $category_id);
+            $temp_id = ORM::factory('Prodcat')
+                ->where('cat_id','=',$category_id)
+                ->find_all();
+
+            $products_ids = array();
+            foreach ($temp_id as $relation) {
+                $products_ids[] = $relation->prod_id;
+            }
+
+            if ($products_ids) {
+                $count_product = $count_product->where('id','IN',$products_ids);
+            } else {
+                $count_product = $count_product->where('id','=', 'DISABLED');
+            }
         }
         if ($on_main) {
             $count_product = $count_product->where('on_main', '=', true);
@@ -46,7 +72,20 @@ class Controller_Site_Ourproduct extends Controller_Site
             ->where('active','=',1);
 
         if ($category_id) {
-            $ourproduct = $ourproduct->where('category_id', '=', $category_id);
+            $temp_id = ORM::factory('Prodcat')
+                ->where('cat_id','=',$category_id)
+                ->find_all();
+
+            $products_ids = array();
+            foreach ($temp_id as $relation) {
+                $products_ids[] = $relation->prod_id;
+            }
+
+            if ($products_ids) {
+                $ourproduct = $ourproduct->where('id','IN',$products_ids);
+            } else {
+                $ourproduct = $ourproduct->where('id','=', 'DISABLED');
+            }
         }
 
         if ($on_main) {
@@ -66,7 +105,7 @@ class Controller_Site_Ourproduct extends Controller_Site
                 'html' => View::factory('site/ourproduct/more', array(
                     'ourproduct' => $ourproduct,
                 ))->render(),
-                'more' => $count_product >= self::LIMIT_ON_PAGE * ($offset / self::LIMIT_ON_PAGE) + self::LIMIT_ON_PAGE
+                'more' => $count_product >= self::LIMIT_ON_PAGE * ($offset / self::LIMIT_ON_PAGE) + self::LIMIT_ON_PAGE,
               )
           )
         );
@@ -75,22 +114,44 @@ class Controller_Site_Ourproduct extends Controller_Site
     public function action_category()
     {
         $category_id = $this->request->post('category_id');
-        $count_product = ORM::factory('Ourproduct')->where('active','=',1);
+        $count_product = ORM::factory('Ourproduct')
+            ->where('active','=',1);
+
+        if ($category_id) {
+            $temp_id = ORM::factory('Prodcat')
+                ->where('cat_id','=',$category_id)
+                ->find_all();
+
+            $products_ids = array();
+            foreach ($temp_id as $relation) {
+                $products_ids[] = $relation->prod_id;
+            }
+            if ($products_ids) {
+                $count_product = $count_product->where('id','IN',$products_ids);
+            }
+
+        }
 
         $count_product = $count_product->count_all();
 
-        $ourproduct = ORM::factory('Ourproduct')
-            ->where('ourproducts.active','=',1);
 
-        if ($category_id) {
-            $ourproduct = $ourproduct->categories->where('prod_cat.cat_id', '=', $category_id);
+        if ($category_id && $products_ids) {
+            $ourproduct = ORM::factory('Ourproduct')
+                ->where('active', '=', 1)
+                ->where('id','IN',$products_ids)
+                ->limit(self::LIMIT_ON_PAGE)
+                ->find_all()->as_array();
+        } elseif($category_id) {
+            $ourproduct = ORM::factory('Ourproduct')
+                ->where('active', '=', 1)
+                ->limit(0)
+                ->find_all()->as_array();
+        } else {
+            $ourproduct = ORM::factory('Ourproduct')
+                ->where('active', '=', 1)
+                ->limit(self::LIMIT_ON_PAGE)
+                ->find_all()->as_array();
         }
-
-        $ourproduct = $ourproduct
-            ->order_by('ourproducts.id','asc')
-            ->limit(self::LIMIT_ON_PAGE)
-            ->find_all()
-            ->as_array();
 
         exit(
             json_encode(

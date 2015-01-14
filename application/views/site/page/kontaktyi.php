@@ -26,7 +26,7 @@
 
             <div class="form_wrap">
 
-                <strong class="form_title">Если </strong>
+                <strong class="form_title">Если надо заполнить</strong>
                 <span class="form_desc">Наш менеджер свяжется с Вами в ближайшее время для подтверждения заказа.</span>
 
                 <form action="#">
