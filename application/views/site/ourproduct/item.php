@@ -27,8 +27,7 @@
                     <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  col-xs-10 col-xs-offset-1">
                         <p>
                             <strong>Задача:</strong><br>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
-                            printer took a galley of type and scrambled it to make a type specimen book.
+                            <?php echo $task ?>
                         </p>
                         <br><br>
                     </div>
@@ -36,7 +35,7 @@
 
                 <div class="row">
                     <div class="col-md-8 col-sm-8 no-padding_right">
-                        <img src="<?php echo Lib_Image::crop($image, 'ourproduct',$id, 929, 702); ?>" alt="<?php echo $name ?>" class="img-responsive">
+                        <img src="<?php echo Lib_Image::crop($second_image, 'ourproduct',$id, 929, 702); ?>" alt="<?php echo $name ?>" class="img-responsive">
 
                         <div class="row">
                             <div class="col-md-10 col-sm-10 col-md-offset-2 col-sm-offset-2">
@@ -59,22 +58,24 @@
                                 <a href="<?php echo $link ?>" class="text_link15"><?php echo $link ?></a>
 
                                 <br><strong>Дата разработки:</strong><br>
-                                18 мая 2014 года
-
-                                <br><strong>В проекте учавствовали:</strong><br>
-                                Менеджмент и вёрстка - Артём Скороход<br>
-                                Программирование - Олег Зголич<br>
-                                Дизайн и проектирование - Илона Скороход
+                                <?php echo $date ?>
+                                <?php if ($performer) {?>
+                                    <br><strong>В проекте учавствовали:</strong><br>
+                                    <?php echo $performer ?>
+                                <?php }?>
                             </p>
                         </div>
-
+<!--
                         <div class="green_tooltip">
                             <p>Интересный эффект при наведении курсора
                                 на товар</p>
                             <img src="/ariolby/img/work-description/green-tooltip.png" alt="tool-tip">
                         </div>
                         <img src="/ariolby/img/work-description/after_green-tooltip.png" alt="image" class="img-responsive">
-
+-->
+                        <div>
+                            <?php echo $feature ?>
+                        </div>
                     </div>
                 </div>
             </div>
