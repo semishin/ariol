@@ -41,7 +41,7 @@ class Model_Ourproduct extends ORM
             'on_main' => 'На главной',
             'image' => 'Изображение',
             'second_image' => 'Главное изображение на странице',
-            'more_image' => 'Дополнительные изображения',
+            'more_images' => 'Дополнительные изображения',
             'feature' => 'Особенности',
             'short_content' => 'Сокращенный контент',
             'content' => 'Контент',
