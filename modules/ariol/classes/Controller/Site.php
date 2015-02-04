@@ -99,20 +99,22 @@ class Controller_Site extends Controller
 
 	private function replace_images()
 	{
-		$content = preg_replace_callback('%(\[.*\])%isU', function($match) {
-			$more_images = json_decode($this->_model->more_images);
+		$model = $this->_model;
+		
+		$content = preg_replace_callback('%(\[.*\])%isU', function($match) use ($model) {
+			$more_images = json_decode($model->more_images);
 			if (!strstr($match[1], '|')) {
 				$match[1] = str_replace(']', '|]', $match[1]);
 			}
 			$parts = explode('|', $match[1]);
-			$image_num = str_replace('[image_', '', $parts[0]) - 1;
+			$image_num = str_replace('[img_', '', $parts[0]) - 1;
 			$image_alt = str_replace(']', '', $parts[1]);
 			if (isset($more_images[$image_num]) && $image = $more_images[$image_num]) {
 				return '<img src="' . Lib_Image::resize_width(
 							$image,
 							mb_strtolower($this->_object_name),
-							$this->_model->id,
-							Model_Article::BIG_WIDTH
+							$model->id,
+							700
 						) . '" class="img-rounded" alt="' . $image_alt . '" />';
 			}
 		}, $this->_model->content);

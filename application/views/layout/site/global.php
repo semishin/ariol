@@ -48,7 +48,13 @@
             <div class="col-md-3 col-sm-4">
 
                 <div class="logo">
-                    <h1><a href="/" style="color: inherit">Ariol <span>web development</span></a></h1>
+                    <h1>
+						<?php if ($_SERVER['REQUEST_URI'] == '/') { ?>
+						<div>Ariol <span>web development</span></div>
+						<?php } else { ?>
+						<a href="/" style="color: inherit">Ariol <span>web development</span></a></h1>
+						<?php } ?>
+					</h1>
                     <span><br><br><br><br>web development</span>
                 </div>
 

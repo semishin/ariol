@@ -28,7 +28,7 @@ class Form_Admin_Ourproduct extends CM_Form_Abstract
         $this->set_field('on_main', new CM_Field_Boolean(), 12);
         $this->set_field('image', new CM_Field_File(), 14);
         $this->set_field('second_image', new CM_Field_File(), 15);
-        $this->set_field('more_image', new CM_Field_Multifile(), 16);
+        $this->set_field('more_images', new CM_Field_Multifile(), 16);
         $this->set_field('feature', new CM_Field_HTML(), 17);
         $this->set_field('short_content', new CM_Field_Text(), 18);
         $this->set_field('content', new CM_Field_HTML(), 20);

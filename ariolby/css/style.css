@@ -301,6 +301,8 @@ article .middle_text p {
     font-family: 'Museo Sans Cyrl 700';
     font-size: 14px;
 }
+.block_works .col-md-3{padding:0;}
+.block_works .row{margin:0;}
 
 article .block_works img {
     margin-top: 15px;
@@ -505,7 +507,7 @@ article .portfolio_buttons button.btn-default:focus{
     padding-bottom: 40px;
 }*/
 .breadcrumb_ariol + h1{
-    padding-bottom: 40px;
+    padding: 20px 0 20px 0;
 }
 article .no-padding_right{
     padding-right: 0px;
@@ -858,7 +860,7 @@ p.introductory_text_xs{
         margin-right: 15px;
         border-bottom: 1px solid #f0f0f0;
     }
-
+	
     article .block_works .col-md-3:nth-last-child(1), article .bottom_140px .col-md-4:nth-last-child(1){
         border: none;
     }

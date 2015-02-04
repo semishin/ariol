@@ -9,7 +9,7 @@
                         <ol class="breadcrumb">
                             <li><a href="/">Главная</a></li>
                             <li><a href="/portfolio">Работы</a></li>
-                            <li class="active"><span><?php echo $name ?></span></li>
+                            <li class="active"><span><?php echo ucfirst($name) ?></span></li>
                         </ol>
                     </div>
                     <h1 class="text-center"><?php echo $name ?></h1>
@@ -27,7 +27,7 @@
                     <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1  col-xs-10 col-xs-offset-1">
                         <p>
                             <strong>Задача:</strong><br>
-                            <?php echo $task ?>
+                            <?php echo $task; ?>
                         </p>
                         <br><br>
                     </div>
@@ -55,7 +55,7 @@
                         <div class="site_info">
                             <p>
                                 <strong>Адрес в интернете:</strong><br>
-                                <a href="<?php echo $link ?>" class="text_link15"><?php echo $link ?></a>
+                                <a target="_blank" rel="nofollow" href="<?php echo $link ?>" class="text_link15"><?php echo $link ?></a>
 
                                 <br><strong>Дата разработки:</strong><br>
                                 <?php echo $date ?>
