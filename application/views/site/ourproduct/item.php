@@ -93,23 +93,29 @@
     <div class="row  bottom_140px">
         <div class="col-md-10 col-sm-10 col-md-offset-1 col-sm-offset-1">
             <div class="row">
-                <div class="col-md-4 col-sm-4">
-                    <a href="#"><img src="/ariolby/img/pholife.png" alt="pholife" class="img-responsive"></a>
-                    <p class="text-center"><a  href="#" class="text_link">Pholife</a></p>
-                    <p class="text-center">Иллюстрация</p>
-                </div>
+                <?php foreach ($pre_ourproduct as $item) { ?>
+                    <div class="col-md-4 col-sm-4">
+                        <a href="/portfolio/<?php echo $item->url ?>"><img src="<?php echo Lib_Image::crop($item->image, 'ourproduct',$item->id, 349, 251); ?>"<?php echo $item->name ?>" class="img-responsive"></a>
+                        <p class="text-center"><a  href="/portfolio/<?php echo $item->url ?>" class="text_link"><?php echo $item->name ?></a></p>
+                        <p class="text-center"><?php $names = array(); ?>
+                            <?php foreach ($item->categories->find_all() as $cat) { ?>
+                                <?php $names[] = mb_ucfirst(mb_strtolower($cat->name)); ?>
+                            <?php } ?>
+                            <?php echo join(', ', $names); ?></p>
+                    </div>
+                <?php } ?>
 
-                <div class="col-md-4 col-sm-4">
-                    <a href="#"><img src="/ariolby/img/max_target.png" alt="max_target" class="img-responsive"></a>
-                    <p class="text-center"><a  href="#" class="text_link">Max Target</a></p>
-                    <p class="text-center">Web-design, оптимизация</p>
-                </div>
-
-                <div class="col-md-4 col-sm-4">
-                    <a href="#"><img src="/ariolby/img/artstick.png" alt="artstick" class="img-responsive"></a>
-                    <p class="text-center"><a  href="#" class="text_link">ArtStick</a></p>
-                    <p class="text-center">Дизайн, вёрстка, продвижение</p>
-                </div>
+                <?php foreach ($post_ourproduct as $item) { ?>
+                    <div class="col-md-4 col-sm-4">
+                        <a href="/portfolio/<?php echo $item->url ?>"><img src="<?php echo Lib_Image::crop($item->image, 'ourproduct',$item->id, 349, 251); ?>" alt="<?php echo $item->name ?>" class="img-responsive"></a>
+                        <p class="text-center"><a  href="/portfolio/<?php echo $item->url ?>" class="text_link"><?php echo $item->name ?></a></p>
+                        <p class="text-center"><?php $names = array(); ?>
+                            <?php foreach ($item->categories->find_all() as $cat) { ?>
+                                <?php $names[] = mb_ucfirst(mb_strtolower($cat->name)); ?>
+                            <?php } ?>
+                            <?php echo join(', ', $names); ?></p>
+                    </div>
+                <?php } ?>
             </div>
         </div>
     </div>

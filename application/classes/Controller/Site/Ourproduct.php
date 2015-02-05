@@ -34,6 +34,50 @@ class Controller_Site_Ourproduct extends Controller_Site
     public function action_item()
     {
         $this->set_metatags_and_content($this->param('url'), 'ourproduct');
+
+        $count_pre_ourproduct = ORM::factory('Ourproduct')
+            ->where('active','=',1)
+            ->where('id','<',$this->_model->id)
+            ->count_all();
+
+        $count_post_ourproduct = ORM::factory('Ourproduct')
+            ->where('active','=',1)
+            ->where('id','>',$this->_model->id)
+            ->count_all();
+
+        if (!$count_post_ourproduct) {
+            $count_pre = 3;
+            $count_post = 0;
+        } elseif ($count_post_ourproduct == 1) {
+            $count_pre = 2;
+            $count_post = 1;
+        } elseif ($count_post_ourproduct > 1 && $count_pre_ourproduct) {
+            $count_pre = 1;
+            $count_post = 2;
+        } else {
+            $count_pre = 0;
+            $count_post = 3;
+        }
+
+
+        $pre_ourproduct = ORM::factory('Ourproduct')
+            ->where('active','=',1)
+            ->where('id','<',$this->_model->id)
+            ->order_by('id', 'desc')
+            ->limit($count_pre)
+            ->find_all()
+            ->as_array();
+
+        $post_ourproduct = ORM::factory('Ourproduct')
+            ->where('active','=',1)
+            ->where('id','>',$this->_model->id)
+            ->order_by('id', 'asc')
+            ->limit($count_post)
+            ->find_all()
+            ->as_array();
+
+        $this->template->pre_ourproduct = $pre_ourproduct;
+        $this->template->post_ourproduct = $post_ourproduct;
     }
 
     public function action_more()

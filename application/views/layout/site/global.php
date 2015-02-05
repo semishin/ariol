@@ -79,7 +79,7 @@
 
                     <li><a href="/portfolio">Работы</a></li>
                     <li><a href="/articles">Блог</a></li>
-                    <li><a href="/kontaktyi">Контакты</a></li>
+                    <li><a href="/contacts">Контакты</a></li>
 
                 </ul>
 
@@ -114,7 +114,7 @@
                             </li>
                             <li><a href="/portfolio">Работы</a></li>
                             <li><a href="/articles">Блог</a></li>
-                            <li><a href="/kontaktyi">Контакты</a></li>
+                            <li><a href="/contacts">Контакты</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -141,17 +141,17 @@
                         <div class="top_part">
                             <div class="row">
                                 <div class="col-md-4 col-sm-8">
-                                    <p>220119, Республика Беларусь<br>
-                                        г.Минск, ул. Притыцкого, 62, к.2, офис 813 </p>
+                                    <p>220012, Республика Беларусь<br>
+                                        г.Минск, ул. Понаморенко, 34, помещение 10H </p>
                                 </div>
 
                                 <div class="col-md-3 col-sm-4">
-                                    <p><?php echo Kohana::$config->load('properties.phone1'); ?> life<br>
-                                        <?php echo Kohana::$config->load('properties.phone2'); ?> velcom</p>
+                                    <p><?php echo Kohana::$config->load('properties.phone1'); ?> velcom<br>
+                                        <?php echo Kohana::$config->load('properties.phone2'); ?> городской</p>
                                 </div>
 
                                 <div class="col-md-2 col-sm-6">
-                                    <p><a href="<?php echo Kohana::$config->load('properties.email'); ?>">fixit.by@gmail.com</a></p>
+                                    <p><a href=""><?php echo Kohana::$config->load('properties.email'); ?></a></p>
                                 </div>
 
                                 <div class="col-md-3 col-sm-6">
@@ -178,7 +178,7 @@
 
                                 <div class="col-md-4 col-sm-4">
                                     <div class="central_text">
-                                        <p class="text-center">Агентство интернет-маркетинга</p>
+                                        <p class="text-center">Студия web-разработок</p>
                                         <p class="text-center"><span>Ariol</span></p>
                                     </div>
                                 </div>

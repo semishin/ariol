@@ -2,9 +2,9 @@
 
 class Controller_Site_Page extends Controller_Site
 {
-    public function action_kontaktyi()
+    public function action_contacts()
     {
-        $this->set_metatags_and_content('kontaktyi', 'page');
+        $this->set_metatags_and_content('contacts', 'page');
 
 
     }

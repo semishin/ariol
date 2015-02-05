@@ -17,6 +17,7 @@ class Model_Article extends ORM
             'short_content' => 'Сокращенный контент',
             'position' => 'Позиция',
             'active' => 'Активность',
+            'image' => 'Изображение',
             'url' => 'URL',
             'date' => 'Дата публикации',
             's_title' => 'SEO title',
@@ -40,6 +41,15 @@ class Model_Article extends ORM
             $this->date = date('Y-m-d');
             $this->save($validation);
         }
+    }
+
+    public function addPlusOneView($id) {
+
+        $query = DB::update('articles')
+            ->set(array('count_views' => DB::expr('count_views + 1')))
+            ->where('id', '=', $id)
+            ->execute();
+
     }
 
     protected $_grid_columns = array(
