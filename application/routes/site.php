@@ -20,11 +20,11 @@ Route::set('site-brif', 'brif')
         'action' => 'brif'
     ));
 
-Route::set('site-kontaktyi', 'kontaktyi')
+Route::set('site-contacts', 'contacts')
     ->defaults(array(
         'directory' => 'site',
         'controller' => 'page',
-        'action'     => 'kontaktyi',
+        'action'     => 'contacts',
     ));
 
 Route::set('site-o-kompanii', 'o-kompanii')

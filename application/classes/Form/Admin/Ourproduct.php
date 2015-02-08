@@ -21,19 +21,14 @@ class Form_Admin_Ourproduct extends CM_Form_Abstract
         $this->set_field('categories', new CM_Field_Manytomany($category_list, $this->get_model()), 2);
         $this->set_field('task', new CM_Field_Text(), 3);
         $this->set_field('position', new CM_Field_Int(), 4);
-        $this->set_field('date', new CM_Field_Date(), 5);
+        $this->set_field('date', new CM_Field_String(), 5);
         $this->set_field('url', new CM_Field_String(), 6);
         $this->set_field('link', new CM_Field_String(), 8);
         $this->set_field('active', new CM_Field_Boolean(), 10);
         $this->set_field('on_main', new CM_Field_Boolean(), 12);
         $this->set_field('image', new CM_Field_File(), 14);
-<<<<<<< HEAD
         $this->set_field('second_image', new CM_Field_File(), 15);
         $this->set_field('more_images', new CM_Field_Multifile(), 16);
-=======
-        $this->set_field('second_images', new CM_Field_File(), 15);
-        $this->set_field('more_image', new CM_Field_Multifile(), 16);
->>>>>>> origin/master
         $this->set_field('feature', new CM_Field_HTML(), 17);
         $this->set_field('short_content', new CM_Field_Text(), 18);
         $this->set_field('content', new CM_Field_HTML(), 20);
