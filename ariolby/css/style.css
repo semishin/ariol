@@ -45,7 +45,7 @@ a:focus{
 
 body {
     /*background: url('../img/background.jpg') repeat-y center center;*/
-    background: url('../img/bg_pat.jpg') repeat-y center center;
+    background: url('../img/bg_pat.jpg') repeat top left;
     /*margin: 6px;*/
     margin: 8px;
 }
@@ -205,9 +205,28 @@ header li a {
 header ul.dropdown-menu li a {
     margin-right: auto;
 }
-
-header li a:hover {
+header ul.dropdown-menu li a:hover{
     color: #00cc33;
+}
+
+/*
+header .small_menu ul.dropdown-menu li a:hover,
+header .small_menu ul.dropdown-menu li a:focus,
+header .small_menu ul.dropdown-menu li a:active{
+	 color: #00cc33;
+}*/
+
+header li a:hover{
+    color: #00cc33;
+}
+header ul.nav.navigation>li.active>a{
+    color: #00cc33 !important;
+}
+header li.active  a>i{
+    border: 2px solid #00cc33;
+}
+header li a:focus{
+    color: inherit;
 }
 
 .header_right_block {
@@ -308,6 +327,12 @@ article .block_works img {
     margin-top: 15px;
     width: 100%;
 }
+article .block_works div.row div a+p{
+    margin-top: 20px;
+}
+article .block_works div.row>div{
+   margin-bottom: 40px;
+}
 
 .text_link, .article_name {
     font-family: 'Museo Sans Cyrl 700';
@@ -323,6 +348,7 @@ article .block_works img {
 
 article button.btn-default {
     padding: 6px 12px 4px 12px;
+    padding: 10px 12px 8px 12px;
     font-family: 'Museo Sans Cyrl 500';
     font-size: 14px;
     color: #54afd6;
@@ -390,7 +416,9 @@ footer .top_part .soc_imgs img {
     margin-left: 5px;
 }
 
-footer .top_part .soc_imgs img:nth-child(1):hover {
+
+
+/*footer .top_part .soc_imgs img:nth-child(1):hover {
     border-radius: 100%;
     box-shadow: 0px 0px 1px #3b5998;
 }
@@ -413,7 +441,7 @@ footer .top_part .soc_imgs img:nth-child(4):hover {
 footer .top_part .soc_imgs img:nth-child(5):hover {
     border-radius: 100%;
     box-shadow: 0px 0px 1px #42c7f2;
-}
+}*/
 
 .blog_icon {
     float: left;
@@ -580,6 +608,8 @@ article .full_description{
     /*background: url('../img/work-description/trip-shop_bottom-background.png') no-repeat center bottom;*/
     /*background-size:contain;*/
 }
+
+article .full_description img{max-width:100%;}
 
 article .bottom_140px{
     /*margin-bottom: 140px;*/
